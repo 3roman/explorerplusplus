@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
+  <Type Name="PidlAbsolute">
+    <DisplayString Condition="m_isEmpty">empty</DisplayString>
+    <DisplayString>{m_path}</DisplayString>
+  </Type>
+  <Type Name="PidlChild">
+    <DisplayString Condition="m_isEmpty">empty</DisplayString>
+    <DisplayString>(Child pidl)</DisplayString>
+  </Type>
+</AutoVisualizer>

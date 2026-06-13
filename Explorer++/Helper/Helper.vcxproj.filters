@@ -1,0 +1,542 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="DialogSettings.cpp">
+      <Filter>Dialog Support</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageForwarder.cpp">
+      <Filter>Dialog Support</Filter>
+    </ClCompile>
+    <ClCompile Include="ResizableDialogHelper.cpp">
+      <Filter>Dialog Support</Filter>
+    </ClCompile>
+    <ClCompile Include="ComboBox.cpp">
+      <Filter>Control Support</Filter>
+    </ClCompile>
+    <ClCompile Include="ComboBoxHelper.cpp">
+      <Filter>Control Support</Filter>
+    </ClCompile>
+    <ClCompile Include="ListViewHelper.cpp">
+      <Filter>Control Support</Filter>
+    </ClCompile>
+    <ClCompile Include="RegistrySettings.cpp">
+      <Filter>Settings</Filter>
+    </ClCompile>
+    <ClCompile Include="XMLSettings.cpp">
+      <Filter>Settings</Filter>
+    </ClCompile>
+    <ClCompile Include="FileOperations.cpp">
+      <Filter>Shell</Filter>
+    </ClCompile>
+    <ClCompile Include="FolderSize.cpp">
+      <Filter>Shell</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellHelper.cpp">
+      <Filter>Shell</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellContextMenu.cpp">
+      <Filter>Shell\Shell Integration</Filter>
+    </ClCompile>
+    <ClCompile Include="SetDefaultFileManager.cpp">
+      <Filter>Shell\Shell Integration</Filter>
+    </ClCompile>
+    <ClCompile Include="DropHandler.cpp">
+      <Filter>Data Exchange\Drag and Drop</Filter>
+    </ClCompile>
+    <ClCompile Include="DataObjectImpl.cpp">
+      <Filter>Data Exchange\Drag and Drop</Filter>
+    </ClCompile>
+    <ClCompile Include="EnumFormatEtcImpl.cpp">
+      <Filter>Data Exchange\Drag and Drop</Filter>
+    </ClCompile>
+    <ClCompile Include="DropSourceImpl.cpp">
+      <Filter>Data Exchange\Drag and Drop</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseWindow.cpp">
+      <Filter>Miscellaneous</Filter>
+    </ClCompile>
+    <ClCompile Include="DriveInfo.cpp">
+      <Filter>Miscellaneous</Filter>
+    </ClCompile>
+    <ClCompile Include="FileActionHandler.cpp">
+      <Filter>Miscellaneous</Filter>
+    </ClCompile>
+    <ClCompile Include="Helper.cpp">
+      <Filter>Miscellaneous</Filter>
+    </ClCompile>
+    <ClCompile Include="ReferenceCount.cpp">
+      <Filter>Miscellaneous</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Miscellaneous</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuHelper.cpp">
+      <Filter>Control Support</Filter>
+    </ClCompile>
+    <ClCompile Include="TabHelper.cpp">
+      <Filter>Control Support</Filter>
+    </ClCompile>
+    <ClCompile Include="ProcessHelper.cpp">
+      <Filter>Miscellaneous</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowHelper.cpp">
+      <Filter>Control Support</Filter>
+    </ClCompile>
+    <ClCompile Include="Controls.cpp">
+      <Filter>Control Support</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeHelper.cpp">
+      <Filter>Miscellaneous</Filter>
+    </ClCompile>
+    <ClCompile Include="StringHelper.cpp">
+      <Filter>Miscellaneous</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageHelper.cpp">
+      <Filter>Miscellaneous</Filter>
+    </ClCompile>
+    <ClCompile Include="DpiCompatibility.cpp">
+      <Filter>Miscellaneous</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowSubclass.cpp">
+      <Filter>Control Support</Filter>
+    </ClCompile>
+    <ClCompile Include="CachedIcons.cpp">
+      <Filter>Shell</Filter>
+    </ClCompile>
+    <ClCompile Include="DragDropHelper.cpp">
+      <Filter>Data Exchange\Drag and Drop</Filter>
+    </ClCompile>
+    <ClCompile Include="BulkClipboardWriter.cpp">
+      <Filter>Data Exchange\Clipboard</Filter>
+    </ClCompile>
+    <ClCompile Include="Clipboard.cpp">
+      <Filter>Data Exchange\Clipboard</Filter>
+    </ClCompile>
+    <ClCompile Include="DataExchangeHelper.cpp">
+      <Filter>Data Exchange</Filter>
+    </ClCompile>
+    <ClCompile Include="RichEditHelper.cpp">
+      <Filter>Control Support</Filter>
+    </ClCompile>
+    <ClCompile Include="DataObjectWrapper.cpp">
+      <Filter>Data Exchange\Drag and Drop</Filter>
+    </ClCompile>
+    <ClCompile Include="ClipboardHelper.cpp">
+      <Filter>Data Exchange\Clipboard</Filter>
+    </ClCompile>
+    <ClCompile Include="DropTargetWindow.cpp">
+      <Filter>Data Exchange\Drag and Drop</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellDropTargetWindow.cpp">
+      <Filter>Data Exchange\Drag and Drop</Filter>
+    </ClCompile>
+    <ClCompile Include="ServiceProviderBase.cpp">
+      <Filter>COM</Filter>
+    </ClCompile>
+    <ClCompile Include="GdiplusHelper.cpp">
+      <Filter>Miscellaneous</Filter>
+    </ClCompile>
+    <ClCompile Include="DetoursHelper.cpp">
+      <Filter>Miscellaneous</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceHelper.cpp">
+      <Filter>Miscellaneous</Filter>
+    </ClCompile>
+    <ClCompile Include="Pidl.cpp">
+      <Filter>Shell</Filter>
+    </ClCompile>
+    <ClCompile Include="ScopedBitmapLock.cpp">
+      <Filter>Miscellaneous</Filter>
+    </ClCompile>
+    <ClCompile Include="UniqueThreadId.cpp">
+      <Filter>Miscellaneous</Filter>
+    </ClCompile>
+    <ClCompile Include="UniqueResources.cpp">
+      <Filter>Miscellaneous</Filter>
+    </ClCompile>
+    <ClCompile Include="Console.cpp">
+      <Filter>Miscellaneous</Filter>
+    </ClCompile>
+    <ClCompile Include="ScopedStopSource.cpp">
+      <Filter>Miscellaneous</Filter>
+    </ClCompile>
+    <ClCompile Include="ScopedRedrawDisabler.cpp">
+      <Filter>Control Support</Filter>
+    </ClCompile>
+    <ClCompile Include="ClipboardWatcher.cpp">
+      <Filter>Data Exchange\Clipboard</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageWindowHelper.cpp">
+      <Filter>Control Support</Filter>
+    </ClCompile>
+    <ClCompile Include="DoubleBufferedPaint.cpp">
+      <Filter>Control Support</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellContextMenuBuilder.cpp">
+      <Filter>Shell\Shell Integration</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellContextMenuIdGenerator.cpp">
+      <Filter>Shell\Shell Integration</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellContextMenuIdRemapper.cpp">
+      <Filter>Shell\Shell Integration</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellBackgroundContextMenuDelegate.cpp">
+      <Filter>Shell\Shell Integration</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellBackgroundContextMenu.cpp">
+      <Filter>Shell\Shell Integration</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellItemContextMenu.cpp">
+      <Filter>Shell\Shell Integration</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemClipboardStore.cpp">
+      <Filter>Data Exchange\Clipboard</Filter>
+    </ClCompile>
+    <ClCompile Include="WilExtraTypes.cpp">
+      <Filter>Miscellaneous</Filter>
+    </ClCompile>
+    <ClCompile Include="FileDialogs.cpp">
+      <Filter>Control Support</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemClockImpl.cpp">
+      <Filter>Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyboardStateImpl.cpp">
+      <Filter>Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="PidlHelper.cpp">
+      <Filter>Shell</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MessageForwarder.h">
+      <Filter>Dialog Support</Filter>
+    </ClInclude>
+    <ClInclude Include="ResizableDialogHelper.h">
+      <Filter>Dialog Support</Filter>
+    </ClInclude>
+    <ClInclude Include="ComboBox.h">
+      <Filter>Control Support</Filter>
+    </ClInclude>
+    <ClInclude Include="ComboBoxHelper.h">
+      <Filter>Control Support</Filter>
+    </ClInclude>
+    <ClInclude Include="Controls.h">
+      <Filter>Control Support</Filter>
+    </ClInclude>
+    <ClInclude Include="ListViewHelper.h">
+      <Filter>Control Support</Filter>
+    </ClInclude>
+    <ClInclude Include="DropHandler.h">
+      <Filter>Data Exchange\Drag and Drop</Filter>
+    </ClInclude>
+    <ClInclude Include="DataObjectImpl.h">
+      <Filter>Data Exchange\Drag and Drop</Filter>
+    </ClInclude>
+    <ClInclude Include="DropSourceImpl.h">
+      <Filter>Data Exchange\Drag and Drop</Filter>
+    </ClInclude>
+    <ClInclude Include="EnumFormatEtcImpl.h">
+      <Filter>Data Exchange\Drag and Drop</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseWindow.h">
+      <Filter>Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="DriveInfo.h">
+      <Filter>Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="FileActionHandler.h">
+      <Filter>Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="Helper.h">
+      <Filter>Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="ReferenceCount.h">
+      <Filter>Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellContextMenu.h">
+      <Filter>Shell\Shell Integration</Filter>
+    </ClInclude>
+    <ClInclude Include="SetDefaultFileManager.h">
+      <Filter>Shell\Shell Integration</Filter>
+    </ClInclude>
+    <ClInclude Include="FileOperations.h">
+      <Filter>Shell</Filter>
+    </ClInclude>
+    <ClInclude Include="FolderSize.h">
+      <Filter>Shell</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellHelper.h">
+      <Filter>Shell</Filter>
+    </ClInclude>
+    <ClInclude Include="RegistrySettings.h">
+      <Filter>Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="XMLSettings.h">
+      <Filter>Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="DialogSettings.h">
+      <Filter>Dialog Support</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuHelper.h">
+      <Filter>Control Support</Filter>
+    </ClInclude>
+    <ClInclude Include="TabHelper.h">
+      <Filter>Control Support</Filter>
+    </ClInclude>
+    <ClInclude Include="ProcessHelper.h">
+      <Filter>Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowHelper.h">
+      <Filter>Control Support</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeHelper.h">
+      <Filter>Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="StringHelper.h">
+      <Filter>Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="..\targetver.h">
+      <Filter>Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageHelper.h">
+      <Filter>Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="DpiCompatibility.h">
+      <Filter>Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="WinUserBackwardsCompatibility.h">
+      <Filter>Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowSubclass.h">
+      <Filter>Control Support</Filter>
+    </ClInclude>
+    <ClInclude Include="CachedIcons.h">
+      <Filter>Shell</Filter>
+    </ClInclude>
+    <ClInclude Include="DragDropHelper.h">
+      <Filter>Data Exchange\Drag and Drop</Filter>
+    </ClInclude>
+    <ClInclude Include="BulkClipboardWriter.h">
+      <Filter>Data Exchange\Clipboard</Filter>
+    </ClInclude>
+    <ClInclude Include="Clipboard.h">
+      <Filter>Data Exchange\Clipboard</Filter>
+    </ClInclude>
+    <ClInclude Include="DataExchangeHelper.h">
+      <Filter>Data Exchange</Filter>
+    </ClInclude>
+    <ClInclude Include="RichEditHelper.h">
+      <Filter>Control Support</Filter>
+    </ClInclude>
+    <ClInclude Include="DataObjectWrapper.h">
+      <Filter>Data Exchange\Drag and Drop</Filter>
+    </ClInclude>
+    <ClInclude Include="ClipboardHelper.h">
+      <Filter>Data Exchange\Clipboard</Filter>
+    </ClInclude>
+    <ClInclude Include="DropTargetWindow.h">
+      <Filter>Data Exchange\Drag and Drop</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellDropTargetWindow.h">
+      <Filter>Data Exchange\Drag and Drop</Filter>
+    </ClInclude>
+    <ClInclude Include="ServiceProviderBase.h">
+      <Filter>COM</Filter>
+    </ClInclude>
+    <ClInclude Include="WinRTBaseWrapper.h">
+      <Filter>Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="MovableModel.h">
+      <Filter>Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="DisableUnaligned.h">
+      <Filter>Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="Pidl.h">
+      <Filter>Shell</Filter>
+    </ClInclude>
+    <ClInclude Include="GdiplusHelper.h">
+      <Filter>Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="DetoursHelper.h">
+      <Filter>Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="BetterEnumsWrapper.h">
+      <Filter>Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceHelper.h">
+      <Filter>Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="ScopedBitmapLock.h">
+      <Filter>Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="UniqueVariableSizeStruct.h">
+      <Filter>Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="UniqueThreadId.h">
+      <Filter>Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="UniqueResources.h">
+      <Filter>Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="Console.h">
+      <Filter>Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="Base64Wrapper.h">
+      <Filter>Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="ScopedStopSource.h">
+      <Filter>Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="WeakPtrFactory.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="WeakPtr.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="WeakState.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="ScopedRedrawDisabler.h">
+      <Filter>Control Support</Filter>
+    </ClInclude>
+    <ClInclude Include="SignalWrapper.h">
+      <Filter>Signals</Filter>
+    </ClInclude>
+    <ClInclude Include="SignalHelper.h">
+      <Filter>Signals</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuHelpTextHost.h">
+      <Filter>Control Support</Filter>
+    </ClInclude>
+    <ClInclude Include="ClipboardWatcher.h">
+      <Filter>Data Exchange\Clipboard</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageWindowHelper.h">
+      <Filter>Control Support</Filter>
+    </ClInclude>
+    <ClInclude Include="DoubleBufferedPaint.h">
+      <Filter>Control Support</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellContextMenuDelegate.h">
+      <Filter>Shell\Shell Integration</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellContextMenuIdRemapper.h">
+      <Filter>Shell\Shell Integration</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellContextMenuIdGenerator.h">
+      <Filter>Shell\Shell Integration</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellContextMenuBuilder.h">
+      <Filter>Shell\Shell Integration</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellBackgroundContextMenu.h">
+      <Filter>Shell\Shell Integration</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellItemContextMenu.h">
+      <Filter>Shell\Shell Integration</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellBackgroundContextMenuDelegate.h">
+      <Filter>Shell\Shell Integration</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellItemContextMenuDelegate.h">
+      <Filter>Shell\Shell Integration</Filter>
+    </ClInclude>
+    <ClInclude Include="ClipboardStore.h">
+      <Filter>Data Exchange\Clipboard</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemClipboardStore.h">
+      <Filter>Data Exchange\Clipboard</Filter>
+    </ClInclude>
+    <ClInclude Include="WilExtraTypes.h">
+      <Filter>Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="FileDialogs.h">
+      <Filter>Control Support</Filter>
+    </ClInclude>
+    <ClInclude Include="SortDirection.h">
+      <Filter>Types</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemClockImpl.h">
+      <Filter>Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemClock.h">
+      <Filter>Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyboardStateImpl.h">
+      <Filter>Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyboardState.h">
+      <Filter>Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="AutoReset.h">
+      <Filter>Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="RemoveMode.h">
+      <Filter>Types</Filter>
+    </ClInclude>
+    <ClInclude Include="PassKey.h">
+      <Filter>Types</Filter>
+    </ClInclude>
+    <ClInclude Include="PidlHelper.h">
+      <Filter>Shell</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Dialog Support">
+      <UniqueIdentifier>{e37f7d79-dfed-428f-8e4e-3858bae6605b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control Support">
+      <UniqueIdentifier>{e0d0fe53-9884-4abb-83b0-7bce82b496ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Settings">
+      <UniqueIdentifier>{77b40642-2c8f-42f4-bb13-b17050e92283}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shell">
+      <UniqueIdentifier>{29c0a679-252e-4760-be8c-dde182da34d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shell\Shell Integration">
+      <UniqueIdentifier>{91c6f3d8-5038-415b-be81-a252e07c6526}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Miscellaneous">
+      <UniqueIdentifier>{a38722e8-52ce-4c89-9647-355edcdc155d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data Exchange">
+      <UniqueIdentifier>{b86cae7a-06a5-4db7-982e-d9d65f046d20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data Exchange\Drag and Drop">
+      <UniqueIdentifier>{dd33bfdb-859c-4f78-bc0d-21d67122afee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data Exchange\Clipboard">
+      <UniqueIdentifier>{defee36d-97c6-4793-8684-0b6b287f85ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="COM">
+      <UniqueIdentifier>{a80deb2e-55fa-460e-b05b-036fb27a4988}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Memory">
+      <UniqueIdentifier>{9ca19408-c4a1-49a1-9672-ec8017ecabc5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Signals">
+      <UniqueIdentifier>{3df411e3-c5d3-4d69-b183-e478238937e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Types">
+      <UniqueIdentifier>{3a3e3f62-63fc-46d6-924f-f4eccb0076d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{52d49072-ff88-40cb-a3f6-adaf82a3dd53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Natvis">
+      <UniqueIdentifier>{59f1f5d0-c343-49a0-bb21-63fe55866928}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Natvis Include="Pidl.natvis">
+      <Filter>Natvis</Filter>
+    </Natvis>
+  </ItemGroup>
+</Project>

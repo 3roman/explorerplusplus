@@ -1,0 +1,2217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Bookmarks\BookmarkHelper.cpp">
+      <Filter>Bookmarks</Filter>
+    </ClCompile>
+    <ClCompile Include="TabHandler.cpp">
+      <Filter>Tabs</Filter>
+    </ClCompile>
+    <ClCompile Include="DialogStorageHelper.cpp">
+      <Filter>Dialog Support</Filter>
+    </ClCompile>
+    <ClCompile Include="AboutDialog.cpp">
+      <Filter>Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="DestroyFilesDialog.cpp">
+      <Filter>Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="DisplayColoursDialog.cpp">
+      <Filter>Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="FilterDialog.cpp">
+      <Filter>Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="MassRenameDialog.cpp">
+      <Filter>Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="MergeFilesDialog.cpp">
+      <Filter>Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="RenameTabDialog.cpp">
+      <Filter>Tabs</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectColumnsDialog.cpp">
+      <Filter>Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="SetDefaultColumnsDialog.cpp">
+      <Filter>Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="SetFileAttributesDialog.cpp">
+      <Filter>Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="SplitFileDialog.cpp">
+      <Filter>Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="UpdateCheckDialog.cpp">
+      <Filter>Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="WildcardSelectDialog.cpp">
+      <Filter>Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="SearchDialog.cpp">
+      <Filter>Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="EventSwitcher.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Explorer++.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="HandleWindowState.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="ListViewHandler.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="MainWndSwitch.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Misc.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="MsgHandler.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="IDropFilesCallback.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskbarThumbnails.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="WinMain.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMenuHandler.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="DisplayWindow.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="HolderWindow.cpp">
+      <Filter>Holder Window</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellBrowser\BrowsingHandler.cpp">
+      <Filter>ShellBrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellBrowser\ColumnManager.cpp">
+      <Filter>ShellBrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellBrowser\DirectoryModificationHandler.cpp">
+      <Filter>ShellBrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellBrowser\GroupManager.cpp">
+      <Filter>ShellBrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellBrowser\HandleThumbnails.cpp">
+      <Filter>ShellBrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellBrowser\SortManager.cpp">
+      <Filter>ShellBrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellBrowser\ListView.cpp">
+      <Filter>ShellBrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellBrowser\ColumnDataRetrieval.cpp">
+      <Filter>ShellBrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="MainToolbar.cpp">
+      <Filter>Main Toolbar</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellBrowser\ViewModes.cpp">
+      <Filter>ShellBrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="FileSelectionTests.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptingDialog.cpp">
+      <Filter>Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugins\LuaPlugin.cpp">
+      <Filter>Plugins</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugins\ApiBinding.cpp">
+      <Filter>Plugins</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugins\MenuApi.cpp">
+      <Filter>Plugins</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugins\PluginMenuManager.cpp">
+      <Filter>Plugins</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugins\Manifest.cpp">
+      <Filter>Plugins</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugins\PluginManager.cpp">
+      <Filter>Plugins</Filter>
+    </ClCompile>
+    <ClCompile Include="PluginInitialization.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugins\AcceleratorParser.cpp">
+      <Filter>Plugins</Filter>
+    </ClCompile>
+    <ClCompile Include="MainRebar.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugins\PluginCommandManager.cpp">
+      <Filter>Plugins</Filter>
+    </ClCompile>
+    <ClCompile Include="PluginInterface.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="FileProgressSink.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Tab.cpp">
+      <Filter>Tabs</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugins\Event.cpp">
+      <Filter>Plugins</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugins\TabsApi\TabsApi.cpp">
+      <Filter>Plugins\TabsApi</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugins\TabsApi\Events\TabCreated.cpp">
+      <Filter>Plugins\TabsApi\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugins\TabsApi\Events\TabMoved.cpp">
+      <Filter>Plugins\TabsApi\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugins\TabsApi\Events\TabRemoved.cpp">
+      <Filter>Plugins\TabsApi\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugins\CommandApi\Events\CommandInvoked.cpp">
+      <Filter>Plugins\CommandApi\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugins\TabsApi\Events\TabUpdated.cpp">
+      <Filter>Plugins\TabsApi\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugins\TabsApi\TabProperties.cpp">
+      <Filter>Plugins\TabsApi</Filter>
+    </ClCompile>
+    <ClCompile Include="MainWindow.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceHelper.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandLine.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMenu.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellBrowser\SortHelper.cpp">
+      <Filter>ShellBrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellBrowser\ShellBrowserImpl.cpp">
+      <Filter>ShellBrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellBrowser\TileView.cpp">
+      <Filter>ShellBrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="TabRestorer.cpp">
+      <Filter>Tabs</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellBrowser\HistoryEntry.cpp">
+      <Filter>ShellBrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="Bookmarks\BookmarkTree.cpp">
+      <Filter>Bookmarks</Filter>
+    </ClCompile>
+    <ClCompile Include="Bookmarks\BookmarkItem.cpp">
+      <Filter>Bookmarks</Filter>
+    </ClCompile>
+    <ClCompile Include="Bookmarks\BookmarkClipboard.cpp">
+      <Filter>Bookmarks</Filter>
+    </ClCompile>
+    <ClCompile Include="Bookmarks\BookmarkDataExchange.cpp">
+      <Filter>Bookmarks</Filter>
+    </ClCompile>
+    <ClCompile Include="Bookmarks\UI\AddBookmarkDialog.cpp">
+      <Filter>Bookmarks\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Bookmarks\UI\BookmarkContextMenu.cpp">
+      <Filter>Bookmarks\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Bookmarks\UI\BookmarkListPresenter.cpp">
+      <Filter>Bookmarks\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Bookmarks\UI\BookmarkMenu.cpp">
+      <Filter>Bookmarks\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Bookmarks\UI\BookmarkMenuBuilder.cpp">
+      <Filter>Bookmarks\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Bookmarks\UI\BookmarksMainMenu.cpp">
+      <Filter>Bookmarks\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Bookmarks\UI\BookmarkTreePresenter.cpp">
+      <Filter>Bookmarks\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Bookmarks\UI\ManageBookmarksDialog.cpp">
+      <Filter>Bookmarks\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Bookmarks\UI\BookmarkDropTargetWindow.cpp">
+      <Filter>Bookmarks\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Bookmarks\BookmarkRegistryStorage.cpp">
+      <Filter>Bookmarks</Filter>
+    </ClCompile>
+    <ClCompile Include="Bookmarks\BookmarkXmlStorage.cpp">
+      <Filter>Bookmarks</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellTreeView\DirectoryModificationHandler.cpp">
+      <Filter>ShellTreeView</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellTreeView\ShellTreeView.cpp">
+      <Filter>ShellTreeView</Filter>
+    </ClCompile>
+    <ClCompile Include="DisplayWindow\DisplayWindow.cpp">
+      <Filter>DisplayWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="DisplayWindow\MsgHandler.cpp">
+      <Filter>DisplayWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellBrowser\PreservedShellBrowser.cpp">
+      <Filter>ShellBrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellBrowser\PreservedHistoryEntry.cpp">
+      <Filter>ShellBrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="PreservedTab.cpp">
+      <Filter>Tabs</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellBrowser\ShellNavigationController.cpp">
+      <Filter>ShellBrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="Bookmarks\BookmarkNavigationController.cpp">
+      <Filter>Bookmarks</Filter>
+    </ClCompile>
+    <ClCompile Include="SortMenuBuilder.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Bookmarks\BookmarkDropper.cpp">
+      <Filter>Bookmarks</Filter>
+    </ClCompile>
+    <ClCompile Include="ApplicationHelper.cpp">
+      <Filter>Application Toolbar</Filter>
+    </ClCompile>
+    <ClCompile Include="Bookmarks\UI\BookmarkMenuController.cpp">
+      <Filter>Bookmarks\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Bookmarks\BookmarkIconManager.cpp">
+      <Filter>Bookmarks</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellBrowser\DropTarget.cpp">
+      <Filter>ShellBrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="ThirdPartyCreditsDialog.cpp">
+      <Filter>Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellBrowser\Filtering.cpp">
+      <Filter>ShellBrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="ServiceProvider.cpp">
+      <Filter>Context Menu Support</Filter>
+    </ClCompile>
+    <ClCompile Include="FolderView.cpp">
+      <Filter>Context Menu Support</Filter>
+    </ClCompile>
+    <ClCompile Include="NewMenuClient.cpp">
+      <Filter>Context Menu Support\New Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellView.cpp">
+      <Filter>Context Menu Support</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellTreeView\DropTarget.cpp">
+      <Filter>ShellTreeView</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellBrowser\WebBrowserApp.cpp">
+      <Filter>ShellBrowser\Shell Integration</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellBrowser\DocumentServiceProvider.cpp">
+      <Filter>ShellBrowser\Shell Integration</Filter>
+    </ClCompile>
+    <ClCompile Include="ToolbarView.cpp">
+      <Filter>Views</Filter>
+    </ClCompile>
+    <ClCompile Include="DriveModel.cpp">
+      <Filter>Drives Toolbar</Filter>
+    </ClCompile>
+    <ClCompile Include="DriveEnumeratorImpl.cpp">
+      <Filter>Drives Toolbar</Filter>
+    </ClCompile>
+    <ClCompile Include="DriveWatcherImpl.cpp">
+      <Filter>Drives Toolbar</Filter>
+    </ClCompile>
+    <ClCompile Include="ApplicationToolbarRegistryStorage.cpp">
+      <Filter>Application Toolbar</Filter>
+    </ClCompile>
+    <ClCompile Include="ApplicationToolbarXmlStorage.cpp">
+      <Filter>Application Toolbar</Filter>
+    </ClCompile>
+    <ClCompile Include="Application.cpp">
+      <Filter>Application Toolbar</Filter>
+    </ClCompile>
+    <ClCompile Include="ApplicationContextMenuController.cpp">
+      <Filter>Application Toolbar\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="ApplicationToolbar.cpp">
+      <Filter>Application Toolbar\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="ApplicationContextMenu.cpp">
+      <Filter>Application Toolbar\UI\Views</Filter>
+    </ClCompile>
+    <ClCompile Include="ApplicationToolbarView.cpp">
+      <Filter>Application Toolbar\UI\Views</Filter>
+    </ClCompile>
+    <ClCompile Include="ApplicationEditorDialog.cpp">
+      <Filter>Application Toolbar\UI\Views</Filter>
+    </ClCompile>
+    <ClCompile Include="DrivesToolbar.cpp">
+      <Filter>Drives Toolbar\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="DrivesToolbarView.cpp">
+      <Filter>Drives Toolbar\UI\Views</Filter>
+    </ClCompile>
+    <ClCompile Include="Bookmarks\UI\BookmarksToolbar.cpp">
+      <Filter>Bookmarks\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Bookmarks\UI\BookmarkMenuDropTarget.cpp">
+      <Filter>Bookmarks\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Bookmarks\UI\Views\BookmarksToolbarView.cpp">
+      <Filter>Bookmarks\UI\Views</Filter>
+    </ClCompile>
+    <ClCompile Include="DarkModeManager.cpp">
+      <Filter>Dark Mode Support</Filter>
+    </ClCompile>
+    <ClCompile Include="CrashHandlerHelper.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="ApplicationCrashedDialog.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorRuleRegistryStorage.cpp">
+      <Filter>Color Rules</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorRuleXmlStorage.cpp">
+      <Filter>Color Rules</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorRule.cpp">
+      <Filter>Color Rules</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorRuleEditorDialog.cpp">
+      <Filter>Color Rules\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomizeColorsDialog.cpp">
+      <Filter>Color Rules\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorRuleListView.cpp">
+      <Filter>Color Rules\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorRuleModelFactory.cpp">
+      <Filter>Color Rules</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellTreeView\ShellTreeNode.cpp">
+      <Filter>ShellTreeView</Filter>
+    </ClCompile>
+    <ClCompile Include="OptionsPage.cpp">
+      <Filter>Dialogs\Options</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneralOptionsPage.cpp">
+      <Filter>Dialogs\Options</Filter>
+    </ClCompile>
+    <ClCompile Include="AppearanceOptionsPage.cpp">
+      <Filter>Dialogs\Options</Filter>
+    </ClCompile>
+    <ClCompile Include="DefaultSettingsOptionsPage.cpp">
+      <Filter>Dialogs\Options</Filter>
+    </ClCompile>
+    <ClCompile Include="FilesFoldersOptionsPage.cpp">
+      <Filter>Dialogs\Options</Filter>
+    </ClCompile>
+    <ClCompile Include="TabsOptionsPage.cpp">
+      <Filter>Dialogs\Options</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowOptionsPage.cpp">
+      <Filter>Dialogs\Options</Filter>
+    </ClCompile>
+    <ClCompile Include="AdvancedOptionsPage.cpp">
+      <Filter>Dialogs\Options</Filter>
+    </ClCompile>
+    <ClCompile Include="OptionsDialog.cpp">
+      <Filter>Dialogs\Options</Filter>
+    </ClCompile>
+    <ClCompile Include="Theme.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="ThemeManager.cpp">
+      <Filter>Dark Mode Support</Filter>
+    </ClCompile>
+    <ClCompile Include="ThemeWindowTracker.cpp">
+      <Filter>Dark Mode Support</Filter>
+    </ClCompile>
+    <ClCompile Include="ToolbarHelper.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="FontsOptionsPage.cpp">
+      <Filter>Dialogs\Options</Filter>
+    </ClCompile>
+    <ClCompile Include="FontHelper.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="MainFontSetter.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemFontHelper.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomFontStorage.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomFont.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="FeatureList.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="BrowserPane.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="LabelEditHandler.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="IconFetcherImpl.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="OneShotTimerManager.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="OneShotTimer.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="HistoryModel.cpp">
+      <Filter>History</Filter>
+    </ClCompile>
+    <ClCompile Include="MainRebarRegistryStorage.cpp">
+      <Filter>Main Rebar</Filter>
+    </ClCompile>
+    <ClCompile Include="MainRebarXmlStorage.cpp">
+      <Filter>Main Rebar</Filter>
+    </ClCompile>
+    <ClCompile Include="TabRegistryStorage.cpp">
+      <Filter>Tabs</Filter>
+    </ClCompile>
+    <ClCompile Include="TabXmlStorage.cpp">
+      <Filter>Tabs</Filter>
+    </ClCompile>
+    <ClCompile Include="ApplicationDropper.cpp">
+      <Filter>Application Toolbar</Filter>
+    </ClCompile>
+    <ClCompile Include="ApplicationExecutorImpl.cpp">
+      <Filter>Application Toolbar</Filter>
+    </ClCompile>
+    <ClCompile Include="MainToolbarStorage.cpp">
+      <Filter>Main Toolbar</Filter>
+    </ClCompile>
+    <ClCompile Include="NavigationHelper.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="FrequentLocationsModel.cpp">
+      <Filter>Frequent Locations</Filter>
+    </ClCompile>
+    <ClCompile Include="LocationVisitInfo.cpp">
+      <Filter>Frequent Locations</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectoryOperationsHelper.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="ClipboardOperations.cpp">
+      <Filter>Data Exchange\Clipboard</Filter>
+    </ClCompile>
+    <ClCompile Include="PasteSymLinksClient.cpp">
+      <Filter>Data Exchange\Clipboard</Filter>
+    </ClCompile>
+    <ClCompile Include="PasteSymLinksServer.cpp">
+      <Filter>Data Exchange\Clipboard</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandLineSplitter.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="VersionHelper.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Version.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="AcceleratorUpdater.cpp">
+      <Filter>Core\Accelerators</Filter>
+    </ClCompile>
+    <ClCompile Include="DefaultAccelerators.cpp">
+      <Filter>Core\Accelerators</Filter>
+    </ClCompile>
+    <ClCompile Include="AcceleratorManager.cpp">
+      <Filter>Core\Accelerators</Filter>
+    </ClCompile>
+    <ClCompile Include="AcceleratorHelper.cpp">
+      <Filter>Core\Accelerators</Filter>
+    </ClCompile>
+    <ClCompile Include="Win32ResourceLoader.cpp">
+      <Filter>Resource Loading</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellIconLoaderImpl.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="UIThreadExecutor.cpp">
+      <Filter>Async\Executors</Filter>
+    </ClCompile>
+    <ClCompile Include="ComStaThreadPoolExecutor.cpp">
+      <Filter>Async\Executors</Filter>
+    </ClCompile>
+    <ClCompile Include="Runtime.cpp">
+      <Filter>Async</Filter>
+    </ClCompile>
+    <ClCompile Include="RuntimeHelper.cpp">
+      <Filter>Async</Filter>
+    </ClCompile>
+    <ClCompile Include="AsyncIconFetcher.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="App.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="StartupCommandLineProcessor.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="BrowserList.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelessDialogList.cpp">
+      <Filter>Dialog Support</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelessDialogHelper.cpp">
+      <Filter>Dialog Support</Filter>
+    </ClCompile>
+    <ClCompile Include="RegistryAppStorage.cpp">
+      <Filter>Storage</Filter>
+    </ClCompile>
+    <ClCompile Include="XmlAppStorage.cpp">
+      <Filter>Storage</Filter>
+    </ClCompile>
+    <ClCompile Include="RegistryAppStorageFactory.cpp">
+      <Filter>Storage</Filter>
+    </ClCompile>
+    <ClCompile Include="XmlAppStorageFactory.cpp">
+      <Filter>Storage</Filter>
+    </ClCompile>
+    <ClCompile Include="DefaultColumnRegistryStorage.cpp">
+      <Filter>Column Storage</Filter>
+    </ClCompile>
+    <ClCompile Include="DefaultColumnXmlStorage.cpp">
+      <Filter>Column Storage</Filter>
+    </ClCompile>
+    <ClCompile Include="ColumnRegistryStorage.cpp">
+      <Filter>Column Storage</Filter>
+    </ClCompile>
+    <ClCompile Include="ColumnStorage.cpp">
+      <Filter>Column Storage</Filter>
+    </ClCompile>
+    <ClCompile Include="ColumnXmlStorage.cpp">
+      <Filter>Column Storage</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowRegistryStorage.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowXmlStorage.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowStorage.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="ConfigRegistryStorage.cpp">
+      <Filter>Config</Filter>
+    </ClCompile>
+    <ClCompile Include="ConfigXmlStorage.cpp">
+      <Filter>Config</Filter>
+    </ClCompile>
+    <ClCompile Include="ProcessManager.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="TestHelper.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Storage.cpp">
+      <Filter>Storage</Filter>
+    </ClCompile>
+    <ClCompile Include="LanguageHelper.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="TabEvents.cpp">
+      <Filter>Tabs</Filter>
+    </ClCompile>
+    <ClCompile Include="FrequentLocationsRegistryStorage.cpp">
+      <Filter>Frequent Locations</Filter>
+    </ClCompile>
+    <ClCompile Include="FrequentLocationsXmlStorage.cpp">
+      <Filter>Frequent Locations</Filter>
+    </ClCompile>
+    <ClCompile Include="HistoryMenu.cpp">
+      <Filter>History\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="FrequentLocationsMenu.cpp">
+      <Filter>Frequent Locations\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="RebarView.cpp">
+      <Filter>Views</Filter>
+    </ClCompile>
+    <ClCompile Include="MainRebarView.cpp">
+      <Filter>Main Rebar\UI\Views</Filter>
+    </ClCompile>
+    <ClCompile Include="TabRestorerMenu.cpp">
+      <Filter>Tabs\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="StartupOptionsPage.cpp">
+      <Filter>Dialogs\Options</Filter>
+    </ClCompile>
+    <ClCompile Include="LayoutDefaults.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="StartupFoldersRegistryStorage.cpp">
+      <Filter>Startup</Filter>
+    </ClCompile>
+    <ClCompile Include="StartupFoldersXmlStorage.cpp">
+      <Filter>Startup</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellBrowser\NavigationManager.cpp">
+      <Filter>ShellBrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellBrowser\ShellBrowser.cpp">
+      <Filter>ShellBrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellBrowser\NavigationRequest.cpp">
+      <Filter>ShellBrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellBrowser\NavigationEvents.cpp">
+      <Filter>ShellBrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="EventScope.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellBrowser\ShellBrowserEvents.cpp">
+      <Filter>ShellBrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="FrequentLocationsTracker.cpp">
+      <Filter>Frequent Locations</Filter>
+    </ClCompile>
+    <ClCompile Include="HistoryTracker.cpp">
+      <Filter>History</Filter>
+    </ClCompile>
+    <ClCompile Include="AddressBar.cpp">
+      <Filter>Address Bar\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="AddressBarView.cpp">
+      <Filter>Address Bar\UI\Views</Filter>
+    </ClCompile>
+    <ClCompile Include="StatusBarView.cpp">
+      <Filter>Core\UI\Views</Filter>
+    </ClCompile>
+    <ClCompile Include="StatusBar.cpp">
+      <Filter>Core\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellWatcher.cpp">
+      <Filter>Directory Watching</Filter>
+    </ClCompile>
+    <ClCompile Include="FileSystemWatcher.cpp">
+      <Filter>Directory Watching</Filter>
+    </ClCompile>
+    <ClCompile Include="EventWindow.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="DriveWatcher.cpp">
+      <Filter>Drives Toolbar</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseDialog.cpp">
+      <Filter>Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellBrowser\ColumnHelper.cpp">
+      <Filter>ShellBrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="TabList.cpp">
+      <Filter>Tabs</Filter>
+    </ClCompile>
+    <ClCompile Include="SearchTabsDialog.cpp">
+      <Filter>Dialogs\Search Tabs</Filter>
+    </ClCompile>
+    <ClCompile Include="SearchTabsModel.cpp">
+      <Filter>Dialogs\Search Tabs</Filter>
+    </ClCompile>
+    <ClCompile Include="DarkModeColorProvider.cpp">
+      <Filter>Theming</Filter>
+    </ClCompile>
+    <ClCompile Include="ThemedTabControlPainter.cpp">
+      <Filter>Theming</Filter>
+    </ClCompile>
+    <ClCompile Include="BrowserWindow.cpp">
+      <Filter>Browser</Filter>
+    </ClCompile>
+    <ClCompile Include="BrowserCommandController.cpp">
+      <Filter>Browser\Command Handling</Filter>
+    </ClCompile>
+    <ClCompile Include="BrowserCommandTargetManager.cpp">
+      <Filter>Browser\Command Handling</Filter>
+    </ClCompile>
+    <ClCompile Include="ScopedBrowserCommandTarget.cpp">
+      <Filter>Browser\Command Handling</Filter>
+    </ClCompile>
+    <ClCompile Include="FileOperations.cpp">
+      <Filter>Shell</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewsMenuBuilder.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenItemsContextMenuDelegate.cpp">
+      <Filter>Context Menu Support</Filter>
+    </ClCompile>
+    <ClCompile Include="BackgroundContextMenuDelegate.cpp">
+      <Filter>Context Menu Support</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellBrowser\ShellBrowserContextMenuDelegate.cpp">
+      <Filter>ShellBrowser\Shell Integration</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenItemLocationContextMenuDelegate.cpp">
+      <Filter>Context Menu Support</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellTreeView\ShellTreeViewContextMenuDelegate.cpp">
+      <Filter>ShellTreeView\Shell Integration</Filter>
+    </ClCompile>
+    <ClCompile Include="SortModeMenuMappings.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="ClangCLLibs.cpp">
+      <Filter>Clang-CL</Filter>
+    </ClCompile>
+    <ClCompile Include="TabView.cpp">
+      <Filter>Views</Filter>
+    </ClCompile>
+    <ClCompile Include="MainTabView.cpp">
+      <Filter>Tabs\UI\Views</Filter>
+    </ClCompile>
+    <ClCompile Include="MainTabViewImageListManager.cpp">
+      <Filter>Tabs\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="TabBacking.cpp">
+      <Filter>Tabs\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMenuSubMenuView.cpp">
+      <Filter>Menus\UI\Views</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuView.cpp">
+      <Filter>Menus\UI\Views</Filter>
+    </ClCompile>
+    <ClCompile Include="PopupMenuView.cpp">
+      <Filter>Menus\UI\Views</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuBase.cpp">
+      <Filter>Menus\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellItemsMenu.cpp">
+      <Filter>Menus\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="TabHistoryMenu.cpp">
+      <Filter>Menus\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="TabParentItemsMenu.cpp">
+      <Filter>Menus\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="ToolbarContextMenu.cpp">
+      <Filter>Menus\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellIconModel.cpp">
+      <Filter>Menus\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceIconModel.cpp">
+      <Filter>Menus\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="TabContextMenu.cpp">
+      <Filter>Tabs\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="NoOpMenuHelpTextHost.cpp">
+      <Filter>Menus\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellBrowser\ShellBrowserFactoryImpl.cpp">
+      <Filter>ShellBrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="TabContainer.cpp">
+      <Filter>Tabs\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="TabContainerBackgroundContextMenu.cpp">
+      <Filter>Tabs\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="DialogHelper.cpp">
+      <Filter>Dialog Support</Filter>
+    </ClCompile>
+    <ClCompile Include="Bookmarks\UI\OrganizeBookmarksContextMenu.cpp">
+      <Filter>Bookmarks\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="TreeView.cpp">
+      <Filter>Views\TreeView</Filter>
+    </ClCompile>
+    <ClCompile Include="TreeViewNode.cpp">
+      <Filter>Views\TreeView</Filter>
+    </ClCompile>
+    <ClCompile Include="TreeViewAdapter.cpp">
+      <Filter>Views\TreeView</Filter>
+    </ClCompile>
+    <ClCompile Include="Bookmarks\UI\BookmarkTreeViewAdapter.cpp">
+      <Filter>Bookmarks\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Bookmarks\UI\BookmarkTreeViewNode.cpp">
+      <Filter>Bookmarks\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Bookmarks\UI\BookmarkTreeViewContextMenu.cpp">
+      <Filter>Bookmarks\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Bookmarks\UI\BookmarkColumnHelper.cpp">
+      <Filter>Bookmarks\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Bookmarks\UI\BookmarkListViewItem.cpp">
+      <Filter>Bookmarks\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Bookmarks\UI\BookmarkColumnModel.cpp">
+      <Filter>Bookmarks\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Bookmarks\UI\BookmarkListViewModel.cpp">
+      <Filter>Bookmarks\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="ListView.cpp">
+      <Filter>Views\ListView</Filter>
+    </ClCompile>
+    <ClCompile Include="ListViewModel.cpp">
+      <Filter>Views\ListView</Filter>
+    </ClCompile>
+    <ClCompile Include="ListViewColumnModel.cpp">
+      <Filter>Views\ListView</Filter>
+    </ClCompile>
+    <ClCompile Include="PlatformContextImpl.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellWatcherManager.cpp">
+      <Filter>Directory Watching</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectoryWatcherFactoryImpl.cpp">
+      <Filter>Directory Watching</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellEnumeratorImpl.cpp">
+      <Filter>Shell</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellEntry.cpp">
+      <Filter>Shell</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellEntryCollection.cpp">
+      <Filter>Shell</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Bookmarks\BookmarkHelper.h">
+      <Filter>Bookmarks</Filter>
+    </ClInclude>
+    <ClInclude Include="AboutDialog.h">
+      <Filter>Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="DestroyFilesDialog.h">
+      <Filter>Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="DisplayColoursDialog.h">
+      <Filter>Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="Explorer++.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Explorer++_internal.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="FilterDialog.h">
+      <Filter>Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="IDropFilesCallback.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="MassRenameDialog.h">
+      <Filter>Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="MergeFilesDialog.h">
+      <Filter>Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="DefaultColumns.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="SearchDialog.h">
+      <Filter>Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectColumnsDialog.h">
+      <Filter>Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="RenameTabDialog.h">
+      <Filter>Tabs</Filter>
+    </ClInclude>
+    <ClInclude Include="SetDefaultColumnsDialog.h">
+      <Filter>Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="SetFileAttributesDialog.h">
+      <Filter>Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="SplitFileDialog.h">
+      <Filter>Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="UpdateCheckDialog.h">
+      <Filter>Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="WildcardSelectDialog.h">
+      <Filter>Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\targetver.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="HolderWindow.h">
+      <Filter>Holder Window</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellBrowser\SortModes.h">
+      <Filter>ShellBrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellBrowser\ViewModes.h">
+      <Filter>ShellBrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellBrowser\Columns.h">
+      <Filter>ShellBrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellBrowser\ColumnDataRetrieval.h">
+      <Filter>ShellBrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellBrowser\ItemData.h">
+      <Filter>ShellBrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="MainToolbar.h">
+      <Filter>Main Toolbar</Filter>
+    </ClInclude>
+    <ClInclude Include="DefaultToolbarButtons.h">
+      <Filter>Main Toolbar</Filter>
+    </ClInclude>
+    <ClInclude Include="MainToolbarButtons.h">
+      <Filter>Main Toolbar</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptingDialog.h">
+      <Filter>Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugins\LuaPlugin.h">
+      <Filter>Plugins</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugins\ApiBinding.h">
+      <Filter>Plugins</Filter>
+    </ClInclude>
+    <ClInclude Include="Tab.h">
+      <Filter>Tabs</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugins\MenuApi.h">
+      <Filter>Plugins</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugins\PluginMenuManager.h">
+      <Filter>Plugins</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugins\Manifest.h">
+      <Filter>Plugins</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugins\PluginManager.h">
+      <Filter>Plugins</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugins\AcceleratorParser.h">
+      <Filter>Plugins</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugins\PluginCommandManager.h">
+      <Filter>Plugins</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuRanges.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="PluginInterface.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="FileProgressSink.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugins\Event.h">
+      <Filter>Plugins</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugins\TabsApi\TabsApi.h">
+      <Filter>Plugins\TabsApi</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugins\TabsApi\Events\TabCreated.h">
+      <Filter>Plugins\TabsApi\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugins\TabsApi\Events\TabMoved.h">
+      <Filter>Plugins\TabsApi\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugins\TabsApi\Events\TabRemoved.h">
+      <Filter>Plugins\TabsApi\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugins\CommandApi\Events\CommandInvoked.h">
+      <Filter>Plugins\CommandApi\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugins\TabsApi\Events\TabUpdated.h">
+      <Filter>Plugins\TabsApi\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellBrowser\FolderSettings.h">
+      <Filter>ShellBrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugins\TabsApi\TabProperties.h">
+      <Filter>Plugins\TabsApi</Filter>
+    </ClInclude>
+    <ClInclude Include="TaskbarThumbnails.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewModeHelper.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="CoreInterface.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="MainWindow.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceHelper.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandLine.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="NoTranslationResource.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Icon.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellBrowser\SortHelper.h">
+      <Filter>ShellBrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellBrowser\ShellBrowserImpl.h">
+      <Filter>ShellBrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="ValueWrapper.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="PreservedTab.h">
+      <Filter>Tabs</Filter>
+    </ClInclude>
+    <ClInclude Include="TabRestorer.h">
+      <Filter>Tabs</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellBrowser\PreservedShellBrowser.h">
+      <Filter>ShellBrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellBrowser\NavigateParams.h">
+      <Filter>ShellBrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellBrowser\HistoryEntry.h">
+      <Filter>ShellBrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellBrowser\PreservedHistoryEntry.h">
+      <Filter>ShellBrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="Bookmarks\BookmarkTree.h">
+      <Filter>Bookmarks</Filter>
+    </ClInclude>
+    <ClInclude Include="Bookmarks\BookmarkItem.h">
+      <Filter>Bookmarks</Filter>
+    </ClInclude>
+    <ClInclude Include="Bookmarks\BookmarkClipboard.h">
+      <Filter>Bookmarks</Filter>
+    </ClInclude>
+    <ClInclude Include="Bookmarks\BookmarkDataExchange.h">
+      <Filter>Bookmarks</Filter>
+    </ClInclude>
+    <ClInclude Include="Bookmarks\UI\AddBookmarkDialog.h">
+      <Filter>Bookmarks\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Bookmarks\UI\BookmarkContextMenu.h">
+      <Filter>Bookmarks\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Bookmarks\UI\BookmarkListPresenter.h">
+      <Filter>Bookmarks\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Bookmarks\UI\BookmarkMenu.h">
+      <Filter>Bookmarks\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Bookmarks\UI\BookmarkMenuBuilder.h">
+      <Filter>Bookmarks\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Bookmarks\UI\BookmarksMainMenu.h">
+      <Filter>Bookmarks\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Bookmarks\UI\BookmarkTreePresenter.h">
+      <Filter>Bookmarks\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Bookmarks\UI\ManageBookmarksDialog.h">
+      <Filter>Bookmarks\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Bookmarks\UI\BookmarkDropTargetWindow.h">
+      <Filter>Bookmarks\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Bookmarks\BookmarkRegistryStorage.h">
+      <Filter>Bookmarks</Filter>
+    </ClInclude>
+    <ClInclude Include="Bookmarks\BookmarkXmlStorage.h">
+      <Filter>Bookmarks</Filter>
+    </ClInclude>
+    <ClInclude Include="Bookmarks\BookmarkStorage.h">
+      <Filter>Bookmarks</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellTreeView\ShellTreeView.h">
+      <Filter>ShellTreeView</Filter>
+    </ClInclude>
+    <ClInclude Include="DisplayWindow\DisplayWindow.h">
+      <Filter>DisplayWindow</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellBrowser\ShellNavigationController.h">
+      <Filter>ShellBrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="NavigationController.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Bookmarks\BookmarkNavigationController.h">
+      <Filter>Bookmarks</Filter>
+    </ClInclude>
+    <ClInclude Include="Bookmarks\BookmarkNavigatorInterface.h">
+      <Filter>Bookmarks</Filter>
+    </ClInclude>
+    <ClInclude Include="SortMenuBuilder.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Bookmarks\BookmarkDropper.h">
+      <Filter>Bookmarks</Filter>
+    </ClInclude>
+    <ClInclude Include="ApplicationHelper.h">
+      <Filter>Application Toolbar</Filter>
+    </ClInclude>
+    <ClInclude Include="Bookmarks\UI\BookmarkMenuController.h">
+      <Filter>Bookmarks\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Bookmarks\BookmarkIconManager.h">
+      <Filter>Bookmarks</Filter>
+    </ClInclude>
+    <ClInclude Include="DialogConstants.h">
+      <Filter>Dialog Support</Filter>
+    </ClInclude>
+    <ClInclude Include="ThirdPartyCreditsDialog.h">
+      <Filter>Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="Explorer++VersionInfo.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MainResource.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IconMappings.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="ServiceProvider.h">
+      <Filter>Context Menu Support</Filter>
+    </ClInclude>
+    <ClInclude Include="FolderView.h">
+      <Filter>Context Menu Support</Filter>
+    </ClInclude>
+    <ClInclude Include="NewMenuClient.h">
+      <Filter>Context Menu Support\New Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellView.h">
+      <Filter>Context Menu Support</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellBrowser\WebBrowserApp.h">
+      <Filter>ShellBrowser\Shell Integration</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellBrowser\DocumentServiceProvider.h">
+      <Filter>ShellBrowser\Shell Integration</Filter>
+    </ClInclude>
+    <ClInclude Include="ToolbarView.h">
+      <Filter>Views</Filter>
+    </ClInclude>
+    <ClInclude Include="DriveModel.h">
+      <Filter>Drives Toolbar</Filter>
+    </ClInclude>
+    <ClInclude Include="DriveEnumerator.h">
+      <Filter>Drives Toolbar</Filter>
+    </ClInclude>
+    <ClInclude Include="DriveEnumeratorImpl.h">
+      <Filter>Drives Toolbar</Filter>
+    </ClInclude>
+    <ClInclude Include="DriveWatcherImpl.h">
+      <Filter>Drives Toolbar</Filter>
+    </ClInclude>
+    <ClInclude Include="DriveWatcher.h">
+      <Filter>Drives Toolbar</Filter>
+    </ClInclude>
+    <ClInclude Include="ApplicationModel.h">
+      <Filter>Application Toolbar</Filter>
+    </ClInclude>
+    <ClInclude Include="ApplicationToolbarRegistryStorage.h">
+      <Filter>Application Toolbar</Filter>
+    </ClInclude>
+    <ClInclude Include="ApplicationToolbarXmlStorage.h">
+      <Filter>Application Toolbar</Filter>
+    </ClInclude>
+    <ClInclude Include="Application.h">
+      <Filter>Application Toolbar</Filter>
+    </ClInclude>
+    <ClInclude Include="ApplicationContextMenuController.h">
+      <Filter>Application Toolbar\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="ApplicationToolbar.h">
+      <Filter>Application Toolbar\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="ApplicationContextMenu.h">
+      <Filter>Application Toolbar\UI\Views</Filter>
+    </ClInclude>
+    <ClInclude Include="ApplicationToolbarView.h">
+      <Filter>Application Toolbar\UI\Views</Filter>
+    </ClInclude>
+    <ClInclude Include="ApplicationEditorDialog.h">
+      <Filter>Application Toolbar\UI\Views</Filter>
+    </ClInclude>
+    <ClInclude Include="DrivesToolbar.h">
+      <Filter>Drives Toolbar\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="DrivesToolbarView.h">
+      <Filter>Drives Toolbar\UI\Views</Filter>
+    </ClInclude>
+    <ClInclude Include="Bookmarks\UI\BookmarksToolbar.h">
+      <Filter>Bookmarks\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Bookmarks\UI\BookmarkMenuDropTarget.h">
+      <Filter>Bookmarks\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Bookmarks\UI\Views\BookmarksToolbarView.h">
+      <Filter>Bookmarks\UI\Views</Filter>
+    </ClInclude>
+    <ClInclude Include="DarkModeManager.h">
+      <Filter>Dark Mode Support</Filter>
+    </ClInclude>
+    <ClInclude Include="CrashHandlerHelper.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="ApplicationCrashedDialog.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorRuleRegistryStorage.h">
+      <Filter>Color Rules</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorRuleXmlStorage.h">
+      <Filter>Color Rules</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorRule.h">
+      <Filter>Color Rules</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorRuleModel.h">
+      <Filter>Color Rules</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorRuleEditorDialog.h">
+      <Filter>Color Rules\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomizeColorsDialog.h">
+      <Filter>Color Rules\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorRuleListView.h">
+      <Filter>Color Rules\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorRuleModelFactory.h">
+      <Filter>Color Rules</Filter>
+    </ClInclude>
+    <ClInclude Include="DialogStorageHelper.h">
+      <Filter>Dialog Support</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellTreeView\ShellTreeNode.h">
+      <Filter>ShellTreeView</Filter>
+    </ClInclude>
+    <ClInclude Include="OptionsPage.h">
+      <Filter>Dialogs\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneralOptionsPage.h">
+      <Filter>Dialogs\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="AppearanceOptionsPage.h">
+      <Filter>Dialogs\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="DefaultSettingsOptionsPage.h">
+      <Filter>Dialogs\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="FilesFoldersOptionsPage.h">
+      <Filter>Dialogs\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="TabsOptionsPage.h">
+      <Filter>Dialogs\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowOptionsPage.h">
+      <Filter>Dialogs\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="AdvancedOptionsPage.h">
+      <Filter>Dialogs\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="OptionsDialog.h">
+      <Filter>Dialogs\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="Theme.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="ThemeManager.h">
+      <Filter>Dark Mode Support</Filter>
+    </ClInclude>
+    <ClInclude Include="ThemeWindowTracker.h">
+      <Filter>Dark Mode Support</Filter>
+    </ClInclude>
+    <ClInclude Include="Literals.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="ToolbarHelper.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="FontsOptionsPage.h">
+      <Filter>Dialogs\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="FontHelper.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomFont.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="MainFontSetter.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemFontHelper.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomFontStorage.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="FeatureList.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Feature.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="BrowserPane.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="LabelEditHandler.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="IconFetcher.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="IconFetcherImpl.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellBrowser\ShellBrowser.h">
+      <Filter>ShellBrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="OneShotTimerManager.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="OneShotTimer.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="HistoryModel.h">
+      <Filter>History</Filter>
+    </ClInclude>
+    <ClInclude Include="MainRebarRegistryStorage.h">
+      <Filter>Main Rebar</Filter>
+    </ClInclude>
+    <ClInclude Include="MainRebarStorage.h">
+      <Filter>Main Rebar</Filter>
+    </ClInclude>
+    <ClInclude Include="MainRebarXmlStorage.h">
+      <Filter>Main Rebar</Filter>
+    </ClInclude>
+    <ClInclude Include="TabRegistryStorage.h">
+      <Filter>Tabs</Filter>
+    </ClInclude>
+    <ClInclude Include="TabXmlStorage.h">
+      <Filter>Tabs</Filter>
+    </ClInclude>
+    <ClInclude Include="TabStorage.h">
+      <Filter>Tabs</Filter>
+    </ClInclude>
+    <ClInclude Include="ApplicationDropper.h">
+      <Filter>Application Toolbar</Filter>
+    </ClInclude>
+    <ClInclude Include="ApplicationExecutor.h">
+      <Filter>Application Toolbar</Filter>
+    </ClInclude>
+    <ClInclude Include="ApplicationExecutorImpl.h">
+      <Filter>Application Toolbar</Filter>
+    </ClInclude>
+    <ClInclude Include="MainToolbarStorage.h">
+      <Filter>Main Toolbar</Filter>
+    </ClInclude>
+    <ClInclude Include="NavigationHelper.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="FrequentLocationsModel.h">
+      <Filter>Frequent Locations</Filter>
+    </ClInclude>
+    <ClInclude Include="LocationVisitInfo.h">
+      <Filter>Frequent Locations</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectoryOperationsHelper.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="ClipboardOperations.h">
+      <Filter>Data Exchange\Clipboard</Filter>
+    </ClInclude>
+    <ClInclude Include="PasteSymLinksServerClientBase.h">
+      <Filter>Data Exchange\Clipboard</Filter>
+    </ClInclude>
+    <ClInclude Include="PasteSymLinksClient.h">
+      <Filter>Data Exchange\Clipboard</Filter>
+    </ClInclude>
+    <ClInclude Include="PasteSymLinksServer.h">
+      <Filter>Data Exchange\Clipboard</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandLineSplitter.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="VersionHelper.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Version.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="AcceleratorUpdater.h">
+      <Filter>Core\Accelerators</Filter>
+    </ClInclude>
+    <ClInclude Include="DefaultAccelerators.h">
+      <Filter>Core\Accelerators</Filter>
+    </ClInclude>
+    <ClInclude Include="AcceleratorMappings.h">
+      <Filter>Core\Accelerators</Filter>
+    </ClInclude>
+    <ClInclude Include="AcceleratorManager.h">
+      <Filter>Core\Accelerators</Filter>
+    </ClInclude>
+    <ClInclude Include="AcceleratorHelper.h">
+      <Filter>Core\Accelerators</Filter>
+    </ClInclude>
+    <ClInclude Include="Accelerator.h">
+      <Filter>Core\Accelerators</Filter>
+    </ClInclude>
+    <ClInclude Include="Win32ResourceLoader.h">
+      <Filter>Resource Loading</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceLoader.h">
+      <Filter>Resource Loading</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellIconLoaderImpl.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellIconLoader.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="UIThreadExecutor.h">
+      <Filter>Async\Executors</Filter>
+    </ClInclude>
+    <ClInclude Include="ComStaThreadPoolExecutor.h">
+      <Filter>Async\Executors</Filter>
+    </ClInclude>
+    <ClInclude Include="Runtime.h">
+      <Filter>Async</Filter>
+    </ClInclude>
+    <ClInclude Include="RuntimeHelper.h">
+      <Filter>Async</Filter>
+    </ClInclude>
+    <ClInclude Include="AsyncIconFetcher.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="App.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="ExitCode.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="StartupCommandLineProcessor.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="BrowserList.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelessDialogList.h">
+      <Filter>Dialog Support</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelessDialogHelper.h">
+      <Filter>Dialog Support</Filter>
+    </ClInclude>
+    <ClInclude Include="RegistryAppStorage.h">
+      <Filter>Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="XmlAppStorage.h">
+      <Filter>Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="RegistryAppStorageFactory.h">
+      <Filter>Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="XmlAppStorageFactory.h">
+      <Filter>Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="AppStorage.h">
+      <Filter>Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="DefaultColumnRegistryStorage.h">
+      <Filter>Column Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="DefaultColumnXmlStorage.h">
+      <Filter>Column Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="ColumnRegistryStorage.h">
+      <Filter>Column Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="ColumnStorage.h">
+      <Filter>Column Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="ColumnXmlStorage.h">
+      <Filter>Column Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="Storage.h">
+      <Filter>Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowRegistryStorage.h">
+      <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowStorage.h">
+      <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowXmlStorage.h">
+      <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="DisplayWindowDefaults.h">
+      <Filter>DisplayWindow</Filter>
+    </ClInclude>
+    <ClInclude Include="Config.h">
+      <Filter>Config</Filter>
+    </ClInclude>
+    <ClInclude Include="ConfigRegistryStorage.h">
+      <Filter>Config</Filter>
+    </ClInclude>
+    <ClInclude Include="ConfigXmlStorage.h">
+      <Filter>Config</Filter>
+    </ClInclude>
+    <ClInclude Include="ProcessManager.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="TestHelper.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="LanguageHelper.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="TabEvents.h">
+      <Filter>Tabs</Filter>
+    </ClInclude>
+    <ClInclude Include="LayoutDefaults.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="FrequentLocationsRegistryStorage.h">
+      <Filter>Frequent Locations</Filter>
+    </ClInclude>
+    <ClInclude Include="FrequentLocationsXmlStorage.h">
+      <Filter>Frequent Locations</Filter>
+    </ClInclude>
+    <ClInclude Include="FrequentLocationsStorageHelper.h">
+      <Filter>Frequent Locations</Filter>
+    </ClInclude>
+    <ClInclude Include="HistoryMenu.h">
+      <Filter>History\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="FrequentLocationsMenu.h">
+      <Filter>Frequent Locations\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="RebarView.h">
+      <Filter>Views</Filter>
+    </ClInclude>
+    <ClInclude Include="MainRebarView.h">
+      <Filter>Main Rebar\UI\Views</Filter>
+    </ClInclude>
+    <ClInclude Include="TabRestorerMenu.h">
+      <Filter>Tabs\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="StartupOptionsPage.h">
+      <Filter>Dialogs\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="StartupFoldersRegistryStorage.h">
+      <Filter>Startup</Filter>
+    </ClInclude>
+    <ClInclude Include="StartupFoldersXmlStorage.h">
+      <Filter>Startup</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellBrowser\NavigationManager.h">
+      <Filter>ShellBrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellBrowser\NavigationRequest.h">
+      <Filter>ShellBrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellBrowser\NavigationRequestDelegate.h">
+      <Filter>ShellBrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellBrowser\NavigationEvents.h">
+      <Filter>ShellBrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="EventScope.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellBrowser\ShellBrowserEvents.h">
+      <Filter>ShellBrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="FrequentLocationsTracker.h">
+      <Filter>Frequent Locations</Filter>
+    </ClInclude>
+    <ClInclude Include="HistoryTracker.h">
+      <Filter>History</Filter>
+    </ClInclude>
+    <ClInclude Include="AddressBar.h">
+      <Filter>Address Bar\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="AddressBarView.h">
+      <Filter>Address Bar\UI\Views</Filter>
+    </ClInclude>
+    <ClInclude Include="AddressBarViewDelegate.h">
+      <Filter>Address Bar\UI\Views</Filter>
+    </ClInclude>
+    <ClInclude Include="StatusBarView.h">
+      <Filter>Core\UI\Views</Filter>
+    </ClInclude>
+    <ClInclude Include="StatusBar.h">
+      <Filter>Core\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="ChangeNotifyMode.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellWatcher.h">
+      <Filter>Directory Watching</Filter>
+    </ClInclude>
+    <ClInclude Include="FileSystemWatcher.h">
+      <Filter>Directory Watching</Filter>
+    </ClInclude>
+    <ClInclude Include="EventWindow.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseDialog.h">
+      <Filter>Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellBrowser\ColumnHelper.h">
+      <Filter>ShellBrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="IconSet.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="TabList.h">
+      <Filter>Tabs</Filter>
+    </ClInclude>
+    <ClInclude Include="SearchTabsDialog.h">
+      <Filter>Dialogs\Search Tabs</Filter>
+    </ClInclude>
+    <ClInclude Include="SearchTabsModel.h">
+      <Filter>Dialogs\Search Tabs</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorProvider.h">
+      <Filter>Theming</Filter>
+    </ClInclude>
+    <ClInclude Include="DarkModeColorProvider.h">
+      <Filter>Theming</Filter>
+    </ClInclude>
+    <ClInclude Include="ThemedTabControlPainter.h">
+      <Filter>Theming</Filter>
+    </ClInclude>
+    <ClInclude Include="BrowserCommandTarget.h">
+      <Filter>Browser\Command Handling</Filter>
+    </ClInclude>
+    <ClInclude Include="BrowserCommandTargetManager.h">
+      <Filter>Browser\Command Handling</Filter>
+    </ClInclude>
+    <ClInclude Include="ScopedBrowserCommandTarget.h">
+      <Filter>Browser\Command Handling</Filter>
+    </ClInclude>
+    <ClInclude Include="BrowserWindow.h">
+      <Filter>Browser</Filter>
+    </ClInclude>
+    <ClInclude Include="BrowserCommandController.h">
+      <Filter>Browser\Command Handling</Filter>
+    </ClInclude>
+    <ClInclude Include="FileOperations.h">
+      <Filter>Shell</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewsMenuBuilder.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="OpenItemsContextMenuDelegate.h">
+      <Filter>Context Menu Support</Filter>
+    </ClInclude>
+    <ClInclude Include="BackgroundContextMenuDelegate.h">
+      <Filter>Context Menu Support</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellBrowser\ShellBrowserContextMenuDelegate.h">
+      <Filter>ShellBrowser\Shell Integration</Filter>
+    </ClInclude>
+    <ClInclude Include="OpenItemLocationContextMenuDelegate.h">
+      <Filter>Context Menu Support</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellTreeView\ShellTreeViewContextMenuDelegate.h">
+      <Filter>ShellTreeView\Shell Integration</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectionType.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="SortModeMenuMappings.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="ClangCLLibs.h">
+      <Filter>Clang-CL</Filter>
+    </ClInclude>
+    <ClInclude Include="TabView.h">
+      <Filter>Views</Filter>
+    </ClInclude>
+    <ClInclude Include="MainTabView.h">
+      <Filter>Tabs\UI\Views</Filter>
+    </ClInclude>
+    <ClInclude Include="TabViewDelegate.h">
+      <Filter>Views</Filter>
+    </ClInclude>
+    <ClInclude Include="MainTabViewImageListManager.h">
+      <Filter>Tabs\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="MouseEvent.h">
+      <Filter>Views</Filter>
+    </ClInclude>
+    <ClInclude Include="TabBacking.h">
+      <Filter>Tabs\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="MainMenuSubMenuView.h">
+      <Filter>Menus\UI\Views</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuView.h">
+      <Filter>Menus\UI\Views</Filter>
+    </ClInclude>
+    <ClInclude Include="PopupMenuView.h">
+      <Filter>Menus\UI\Views</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuBase.h">
+      <Filter>Menus\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellItemsMenu.h">
+      <Filter>Menus\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="TabHistoryMenu.h">
+      <Filter>Menus\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="TabParentItemsMenu.h">
+      <Filter>Menus\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="ToolbarContextMenu.h">
+      <Filter>Menus\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceIconModel.h">
+      <Filter>Menus\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="IconModel.h">
+      <Filter>Menus\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellIconModel.h">
+      <Filter>Menus\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="IconUpdateCallback.h">
+      <Filter>Menus\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="TabContextMenu.h">
+      <Filter>Tabs\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="NoOpMenuHelpTextHost.h">
+      <Filter>Menus\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellBrowser\ShellBrowserFactory.h">
+      <Filter>ShellBrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellBrowser\ShellBrowserFactoryImpl.h">
+      <Filter>ShellBrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="TabContainer.h">
+      <Filter>Tabs\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="TabContainerBackgroundContextMenu.h">
+      <Filter>Tabs\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="DialogHelper.h">
+      <Filter>Dialog Support</Filter>
+    </ClInclude>
+    <ClInclude Include="Bookmarks\UI\OrganizeBookmarksContextMenuDelegate.h">
+      <Filter>Bookmarks\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Bookmarks\UI\OrganizeBookmarksContextMenu.h">
+      <Filter>Bookmarks\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="TreeViewAdapter.h">
+      <Filter>Views\TreeView</Filter>
+    </ClInclude>
+    <ClInclude Include="TreeViewNode.h">
+      <Filter>Views\TreeView</Filter>
+    </ClInclude>
+    <ClInclude Include="TreeView.h">
+      <Filter>Views\TreeView</Filter>
+    </ClInclude>
+    <ClInclude Include="Bookmarks\UI\BookmarkTreeViewNode.h">
+      <Filter>Bookmarks\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Bookmarks\UI\BookmarkTreeViewAdapter.h">
+      <Filter>Bookmarks\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="TreeViewDelegate.h">
+      <Filter>Views\TreeView</Filter>
+    </ClInclude>
+    <ClInclude Include="Bookmarks\UI\BookmarkTreeViewContextMenu.h">
+      <Filter>Bookmarks\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="ListView.h">
+      <Filter>Views\ListView</Filter>
+    </ClInclude>
+    <ClInclude Include="ListViewDelegate.h">
+      <Filter>Views\ListView</Filter>
+    </ClInclude>
+    <ClInclude Include="ListViewModel.h">
+      <Filter>Views\ListView</Filter>
+    </ClInclude>
+    <ClInclude Include="ListViewColumn.h">
+      <Filter>Views\ListView</Filter>
+    </ClInclude>
+    <ClInclude Include="ListViewItem.h">
+      <Filter>Views\ListView</Filter>
+    </ClInclude>
+    <ClInclude Include="Bookmarks\UI\BookmarkColumn.h">
+      <Filter>Bookmarks\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Bookmarks\UI\BookmarkListViewItem.h">
+      <Filter>Bookmarks\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Bookmarks\UI\BookmarkListViewModel.h">
+      <Filter>Bookmarks\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Bookmarks\UI\BookmarkColumnHelper.h">
+      <Filter>Bookmarks\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Bookmarks\UI\BookmarkColumnModel.h">
+      <Filter>Bookmarks\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="ListViewColumnModel.h">
+      <Filter>Views\ListView</Filter>
+    </ClInclude>
+    <ClInclude Include="InsertMarkPosition.h">
+      <Filter>Views</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemStateOp.h">
+      <Filter>Views</Filter>
+    </ClInclude>
+    <ClInclude Include="PlatformContext.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="PlatformContextImpl.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellWatcherManager.h">
+      <Filter>Directory Watching</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectoryWatcher.h">
+      <Filter>Directory Watching</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectoryWatcherFactoryImpl.h">
+      <Filter>Directory Watching</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectoryWatcherFactory.h">
+      <Filter>Directory Watching</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellEntry.h">
+      <Filter>Shell</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellEnumerator.h">
+      <Filter>Shell</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellEnumeratorImpl.h">
+      <Filter>Shell</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellContext.h">
+      <Filter>Shell</Filter>
+    </ClInclude>
+    <ClInclude Include="PidlUpdater.h">
+      <Filter>Shell</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellItemFilter.h">
+      <Filter>Shell</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellEntryCollection.h">
+      <Filter>Shell</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Explorer++.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="Explorer++_NoTranslation.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="Explorer++Main.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="Explorer++VersionInfo.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Display Window.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Explorer++.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Filtering Applied.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Folder Empty.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\No Preview Available.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="VersionConstants.h">
+      <Filter>Core</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{d9baeb37-aac3-4b01-aeae-77a84256303a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application Toolbar">
+      <UniqueIdentifier>{4810f11d-193a-43ea-88f8-68aace59ecc2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Bookmarks">
+      <UniqueIdentifier>{29e54ae7-9c6d-410e-9dca-22bd467ca6d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Color Rules">
+      <UniqueIdentifier>{5ac9210d-3a7b-496c-9049-811bb1d4306f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tabs">
+      <UniqueIdentifier>{e3b2a10c-f5d5-4d00-b7da-606ab09d32ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dialog Support">
+      <UniqueIdentifier>{de7aee89-b700-43b0-b0ee-0f3e1c0e0414}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Drives Toolbar">
+      <UniqueIdentifier>{e52be830-f885-4f05-a86a-121c31f6bb3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{456a11ae-0e84-47d8-8849-57d15479dcbb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Context Menu Support">
+      <UniqueIdentifier>{b842f15b-b7db-453c-9d09-3e9acc40b607}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Context Menu Support\New Menu">
+      <UniqueIdentifier>{ab5e701f-15f5-4cd1-901a-77738a8f1779}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Holder Window">
+      <UniqueIdentifier>{d9276f12-e3f5-4d23-a177-79772ff8b9dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ShellBrowser">
+      <UniqueIdentifier>{c4c4c6aa-6087-4b72-bcd0-4a1c19499130}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main Toolbar">
+      <UniqueIdentifier>{2fe51f54-3d26-4449-92f3-ff8ee95f7751}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugins">
+      <UniqueIdentifier>{09198397-1dae-4619-a80f-5af293a9b949}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugins\TabsApi">
+      <UniqueIdentifier>{973ffc2c-3cf3-423d-abbe-e31ebcd18f81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugins\TabsApi\Events">
+      <UniqueIdentifier>{d95cc55b-536e-4787-ad7f-0e8f606aaaf9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugins\CommandApi">
+      <UniqueIdentifier>{50af2fb1-0a7d-45b6-9c5f-6acdfebd8efe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugins\CommandApi\Events">
+      <UniqueIdentifier>{79e9c559-5c9a-4111-8aba-39fc4208f1fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Bookmarks\UI">
+      <UniqueIdentifier>{ce3e8ee9-017a-43b7-b601-015d3d2d1b4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ShellTreeView">
+      <UniqueIdentifier>{e9f8553a-d212-4c0f-a749-708a1664278c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DisplayWindow">
+      <UniqueIdentifier>{fae666be-a68a-4fd0-91cd-01523513a8d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ShellBrowser\Shell Integration">
+      <UniqueIdentifier>{5b4c01f6-2a4f-4423-9e67-b861a64bf5e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views">
+      <UniqueIdentifier>{a5bb582e-2ab4-463c-b4e4-216257c0c29f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application Toolbar\UI">
+      <UniqueIdentifier>{d77733b3-5157-437b-bc26-cd28b368b052}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application Toolbar\UI\Views">
+      <UniqueIdentifier>{ffca9f15-b69b-468f-9859-162c29af9c4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Drives Toolbar\UI">
+      <UniqueIdentifier>{3c07facd-96fb-4697-a57f-927ac759ed36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Drives Toolbar\UI\Views">
+      <UniqueIdentifier>{ae00fb9f-bc03-4910-856f-5a16c6ca24b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Bookmarks\UI\Views">
+      <UniqueIdentifier>{87d572e6-f08d-48b8-b55e-7bd4107c3d53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dark Mode Support">
+      <UniqueIdentifier>{9ba5d339-25dc-420e-97ef-a84e1cc12f84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Color Rules\UI">
+      <UniqueIdentifier>{75d9a3fc-5fa8-45b6-a300-6e1d711ec008}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\UI">
+      <UniqueIdentifier>{f7610d99-baa5-4d9f-be3e-708c8822cda3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\UI\Views">
+      <UniqueIdentifier>{6590f498-1426-4089-b90b-9174b6a9462e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="History">
+      <UniqueIdentifier>{415a5098-0a21-44a5-9850-90e513b38ed4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main Rebar">
+      <UniqueIdentifier>{fceed596-dd83-4bb7-8b00-39f8e546a708}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Frequent Locations">
+      <UniqueIdentifier>{149a5be0-042f-4e01-b96c-9630a577106a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data Exchange">
+      <UniqueIdentifier>{474ab8a9-61ac-4e08-83e4-50ab19a84d37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data Exchange\Clipboard">
+      <UniqueIdentifier>{cadaacd3-aced-4afa-8fbf-e334258b9316}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Accelerators">
+      <UniqueIdentifier>{4a6efb22-1fee-46bd-a375-12e500fe4fda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Async">
+      <UniqueIdentifier>{60028131-154b-40db-b067-625afba46c39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Async\Executors">
+      <UniqueIdentifier>{931447cd-9040-4f5c-9726-28d9d840b1e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Storage">
+      <UniqueIdentifier>{14059d93-4cf2-4298-9adb-4545937a7534}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Column Storage">
+      <UniqueIdentifier>{0324c360-b481-474e-88d6-1c784d571dfd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Windows">
+      <UniqueIdentifier>{621355b2-c29a-4b3c-b487-dc938a666f95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Config">
+      <UniqueIdentifier>{a4cf8f14-9fa6-451d-8143-121d7958af7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="History\UI">
+      <UniqueIdentifier>{089b2f1b-a85c-4670-921d-73646d9f258c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Frequent Locations\UI">
+      <UniqueIdentifier>{91c75423-0926-4746-bd18-667ffd1ceddb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main Rebar\UI">
+      <UniqueIdentifier>{878bb444-5ecc-4170-9fe4-62875342246a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main Rebar\UI\Views">
+      <UniqueIdentifier>{6b9698dd-16c2-45e2-adc7-7ff73f1e2604}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tabs\UI">
+      <UniqueIdentifier>{94f99105-33a7-45aa-a32a-631ee5fb2b06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Startup">
+      <UniqueIdentifier>{a169b6f4-c126-4868-a377-3767c7c38436}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dialogs">
+      <UniqueIdentifier>{c4dacd32-7f5f-4214-bcd4-9e9e1c4f4cc1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dialogs\Options">
+      <UniqueIdentifier>{2904c500-a16e-431c-a86d-9c687bb0bb42}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Address Bar">
+      <UniqueIdentifier>{a74f53e8-acb1-4bca-9965-f0ac3561022d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Address Bar\UI">
+      <UniqueIdentifier>{75b4830b-c5be-48a1-bdff-4c84dec30c37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Address Bar\UI\Views">
+      <UniqueIdentifier>{53f10996-cecf-4cb8-af6d-c609c309b4ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Loading">
+      <UniqueIdentifier>{e7f03946-8121-4ea7-a8ea-894d7fc97109}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dialogs\Search Tabs">
+      <UniqueIdentifier>{7c950d61-c104-4697-a21e-417ba2696524}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Theming">
+      <UniqueIdentifier>{661ce1d5-e14b-42b5-a6a8-3aad268bd5f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Browser">
+      <UniqueIdentifier>{475e7a41-8c74-457f-8c26-d235876ec838}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Browser\Command Handling">
+      <UniqueIdentifier>{f7182c76-082d-40ff-8608-e9acc927cdc3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shell">
+      <UniqueIdentifier>{21f63c44-0578-42d5-9b67-5f49a3f011ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ShellTreeView\Shell Integration">
+      <UniqueIdentifier>{3b5e176e-dea2-43eb-8811-ac61069f2420}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Clang-CL">
+      <UniqueIdentifier>{5c36b2ac-3b92-4d8d-979e-bf2b43bfdf8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tabs\UI\Views">
+      <UniqueIdentifier>{9b97b02a-3c55-4054-9428-ae70195a30e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Menus">
+      <UniqueIdentifier>{a7bbccfa-f86d-46b8-947e-1b5b1c3018f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Menus\UI">
+      <UniqueIdentifier>{9cf52f50-3a31-4328-b70a-717cef07f56f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Menus\UI\Views">
+      <UniqueIdentifier>{68655611-30b7-4b1a-b7d3-24da8afb8b95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views\TreeView">
+      <UniqueIdentifier>{ab2d98af-8b57-452e-af03-fc0fa64f4ad3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views\ListView">
+      <UniqueIdentifier>{ecab8bbc-283b-49fc-af94-27be3f54e391}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Directory Watching">
+      <UniqueIdentifier>{f250fc00-1a66-44d8-a30a-9840ad247acd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="Explorer++.exe.manifest">
+      <Filter>Resource Files</Filter>
+    </Manifest>
+  </ItemGroup>
+</Project>

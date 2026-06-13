@@ -1,0 +1,56 @@
+# Keep this trimmed project focused on source/build files only.
+
+# Visual Studio user state and caches
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.VC.db
+*.VC.opendb
+ipch/
+
+# Build outputs
+[Dd]ebug*/
+[Rr]elease*/
+[Rr]elWithDebInfo*/
+[Mm]in[Ss]ize[Rr]el*/
+x64/
+x86/
+Win32/
+ARM64/
+out/
+bin/
+obj/
+*.aps
+*.cache
+*.db
+*.exp
+*.ilk
+*.iobj
+*.ipdb
+*.lastbuildstate
+*.log
+*.obj
+*.pch
+*.pdb
+*.recipe
+*.res
+*.tlog
+
+# vcpkg generated dependency/build caches
+/vcpkg_installed/
+/Explorer++/ThirdParty/vcpkg/buildtrees/
+/Explorer++/ThirdParty/vcpkg/downloads/
+/Explorer++/ThirdParty/vcpkg/installed/
+/Explorer++/ThirdParty/vcpkg/packages/
+/Explorer++/ThirdParty/vcpkg/vcpkg.exe.*.backup
+
+# Local packaging/signing artifacts should not be part of the basic repo
+*.appx
+*.cer
+*.msi
+*.msix
+*.pfx
+*.snk
+*.zip
