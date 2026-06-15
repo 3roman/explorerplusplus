@@ -34,3 +34,14 @@ OpenFolderDisposition DetermineOpenDisposition(bool isMiddleButtonDown, bool isC
 
 	return OpenFolderDisposition::CurrentTab;
 }
+
+OpenFolderDisposition DetermineOpenDispositionWithShiftOpeningNewTab(bool isMiddleButtonDown,
+	bool isCtrlKeyDown, bool isShiftKeyDown)
+{
+	if (isShiftKeyDown && !isMiddleButtonDown && !isCtrlKeyDown)
+	{
+		return OpenFolderDisposition::ForegroundTab;
+	}
+
+	return DetermineOpenDisposition(isMiddleButtonDown, isCtrlKeyDown, isShiftKeyDown);
+}

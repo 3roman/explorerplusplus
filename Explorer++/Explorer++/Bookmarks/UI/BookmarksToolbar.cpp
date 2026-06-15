@@ -268,15 +268,17 @@ void BookmarksToolbar::OnBookmarkClicked(BookmarkItem *bookmarkItem, const Mouse
 	UNREFERENCED_PARAMETER(event);
 
 	BookmarkHelper::OpenBookmarkItemWithDisposition(bookmarkItem,
-		DetermineOpenDisposition(false, event.ctrlKey, event.shiftKey), m_browser);
+		DetermineOpenDispositionWithShiftOpeningNewTab(false, event.ctrlKey, event.shiftKey),
+		m_browser);
 }
 
 void BookmarksToolbar::OnBookmarkFolderClicked(BookmarkItem *bookmarkItem, const MouseEvent &event)
 {
-	if (event.ctrlKey)
+	if (event.ctrlKey || event.shiftKey)
 	{
 		BookmarkHelper::OpenBookmarkItemWithDisposition(bookmarkItem,
-			DetermineOpenDisposition(false, event.ctrlKey, event.shiftKey), m_browser);
+			DetermineOpenDispositionWithShiftOpeningNewTab(false, event.ctrlKey, event.shiftKey),
+			m_browser);
 		return;
 	}
 
@@ -293,7 +295,8 @@ void BookmarksToolbar::OnButtonMiddleClicked(const BookmarkItem *bookmarkItem,
 	const MouseEvent &event)
 {
 	BookmarkHelper::OpenBookmarkItemWithDisposition(bookmarkItem,
-		DetermineOpenDisposition(true, event.ctrlKey, event.shiftKey), m_browser);
+		DetermineOpenDispositionWithShiftOpeningNewTab(true, event.ctrlKey, event.shiftKey),
+		m_browser);
 }
 
 void BookmarksToolbar::OnButtonRightClicked(BookmarkItem *bookmarkItem, const MouseEvent &event)

@@ -27,6 +27,7 @@ concept WrappedIntegralSetting = requires(T t) {
 constexpr wchar_t SETTING_NODE_NAME[] = L"Setting";
 
 constexpr wchar_t MAIN_FONT_NODE_NAME[] = L"MainFont";
+constexpr wchar_t FILE_DISPLAY_FONT_NODE_NAME[] = L"FileDisplayFont";
 constexpr wchar_t STARTUP_FOLDERS_NODE_NAME[] = L"StartupFolders";
 
 HRESULT GetSettingNode(IXMLDOMNode *settingsNode, const std::wstring &settingName,
@@ -270,6 +271,17 @@ void LoadFromNode(IXMLDOMNode *settingsNode, Config &config)
 	}
 
 	if (wil::com_ptr_nothrow<IXMLDOMNode> node;
+		GetSettingNode(settingsNode, FILE_DISPLAY_FONT_NODE_NAME, &node) == S_OK)
+	{
+		auto fileDisplayFont = CustomFontStorage::LoadFromXml(node.get());
+
+		if (fileDisplayFont)
+		{
+			config.fileDisplayFont = *fileDisplayFont;
+		}
+	}
+
+	if (wil::com_ptr_nothrow<IXMLDOMNode> node;
 		GetSettingNode(settingsNode, STARTUP_FOLDERS_NODE_NAME, &node) == S_OK)
 	{
 		config.startupFolders = StartupFoldersXmlStorage::Load(node.get());
@@ -485,6 +497,16 @@ void SaveToNode(IXMLDOMDocument *xmlDocument, IXMLDOMElement *settingsNode, cons
 		XMLSettings::CreateElementNode(xmlDocument, &mainFontNode, settingsNode, SETTING_NODE_NAME,
 			MAIN_FONT_NODE_NAME);
 		CustomFontStorage::SaveToXml(xmlDocument, mainFontNode.get(), *mainFont);
+	}
+
+	auto &fileDisplayFont = config.fileDisplayFont.get();
+
+	if (fileDisplayFont)
+	{
+		wil::com_ptr_nothrow<IXMLDOMElement> fileDisplayFontNode;
+		XMLSettings::CreateElementNode(xmlDocument, &fileDisplayFontNode, settingsNode,
+			SETTING_NODE_NAME, FILE_DISPLAY_FONT_NODE_NAME);
+		CustomFontStorage::SaveToXml(xmlDocument, fileDisplayFontNode.get(), *fileDisplayFont);
 	}
 
 	wil::com_ptr_nothrow<IXMLDOMElement> startupFoldersNode;

@@ -54,6 +54,7 @@ TEST_F(AddressBarTest, DisplayUpdateAfterNavigation)
 	std::wstring path = L"c:\\path\\to\\folder";
 	NavigateTab(tab1, path);
 	EXPECT_THAT(m_addressBarView->GetText(), StrCaseEq(path));
+	EXPECT_GT(m_addressBarView->GetBreadcrumbSegmentCountForTesting(), 0u);
 
 	// tab2 isn't active, so navigations in it should be ignored by the address bar. The path shown
 	// should still be the original path.
@@ -93,6 +94,32 @@ TEST_F(AddressBarTest, OpenItemOnEnter)
 	auto *currentEntry = tab1->GetShellBrowser()->GetNavigationController()->GetCurrentEntry();
 	ASSERT_NE(currentEntry, nullptr);
 	EXPECT_EQ(currentEntry->GetPidl(), CreateSimplePidlForTest(updatedPath));
+}
+
+TEST_F(AddressBarTest, OpenItemOnBreadcrumbSegmentClick)
+{
+	auto *tab1 = m_browser->AddTab(L"c:\\path\\to\\folder");
+
+	auto parentPidl = CreateSimplePidlForTest(L"c:\\path\\to");
+	auto *delegate = m_addressBarView->GetDelegateForTesting();
+	delegate->OnBreadcrumbSegmentClicked(parentPidl.Raw());
+
+	EXPECT_EQ(tab1->GetShellBrowser()->GetNavigationController()->GetNumHistoryEntries(), 2);
+
+	auto *currentEntry = tab1->GetShellBrowser()->GetNavigationController()->GetCurrentEntry();
+	ASSERT_NE(currentEntry, nullptr);
+	EXPECT_EQ(currentEntry->GetPidl(), parentPidl);
+}
+
+TEST_F(AddressBarTest, CurrentBreadcrumbSegmentClickDoesntDuplicateHistory)
+{
+	auto *tab1 = m_browser->AddTab(L"c:\\path\\to\\folder");
+
+	auto currentPidl = CreateSimplePidlForTest(L"c:\\path\\to\\folder");
+	auto *delegate = m_addressBarView->GetDelegateForTesting();
+	delegate->OnBreadcrumbSegmentClicked(currentPidl.Raw());
+
+	EXPECT_EQ(tab1->GetShellBrowser()->GetNavigationController()->GetNumHistoryEntries(), 1);
 }
 
 TEST_F(AddressBarTest, RevertTextOnEscape)

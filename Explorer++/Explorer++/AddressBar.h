@@ -4,6 +4,7 @@
 
 #pragma once
 
+#include "AddressBarView.h"
 #include "AddressBarViewDelegate.h"
 #include "BrowserCommandTarget.h"
 #include "ScopedBrowserCommandTarget.h"
@@ -16,7 +17,6 @@
 #include <memory>
 #include <vector>
 
-class AddressBarView;
 class AsyncIconFetcher;
 class BrowserWindow;
 class NavigationEvents;
@@ -65,11 +65,14 @@ private:
 
 	void OnEnterPressed();
 	void OnEscapePressed();
+	void OnBreadcrumbSegmentClicked(PCIDLIST_ABSOLUTE pidl) override;
 	void OnTabSelected(const Tab &tab);
 	void OnNavigationCommitted(const NavigationRequest *request);
 	void OnDirectoryPropertiesChanged(const ShellBrowser *shellBrowser);
 	void UpdateTextAndIcon(const ShellBrowser *shellBrowser,
 		IconUpdateType iconUpdateType = IconUpdateType::FetchIfNotCached);
+	static std::vector<AddressBarView::BreadcrumbSegment> BuildBreadcrumbSegments(
+		PCIDLIST_ABSOLUTE pidl);
 	static concurrencpp::null_result RetrieveUpdatedIcon(WeakPtr<AddressBar> weakSelf,
 		PidlAbsolute pidl);
 	void OnWindowDestroyed();

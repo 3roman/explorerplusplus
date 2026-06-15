@@ -116,6 +116,7 @@ void AddressBar::OnEnterPressed()
 	// Note that if the above call to TransformUserEnteredPathToAbsolutePathAndNormalize() fails,
 	// the text won't be reverted. That gives the user the chance to update the text and try again.
 	m_view->RevertText();
+	m_view->ShowBreadcrumb();
 
 	m_browser->OpenItem(*absolutePath,
 		DetermineOpenDisposition(false, IsKeyDown(VK_CONTROL), IsKeyDown(VK_SHIFT)));
@@ -131,6 +132,7 @@ void AddressBar::OnEscapePressed()
 	}
 	else
 	{
+		m_view->ShowBreadcrumb();
 		m_browser->FocusActiveTab();
 	}
 }
@@ -145,6 +147,18 @@ void AddressBar::OnBeginDrag()
 void AddressBar::OnFocused()
 {
 	m_commandTarget.TargetFocused();
+}
+
+void AddressBar::OnBreadcrumbSegmentClicked(PCIDLIST_ABSOLUTE pidl)
+{
+	if (m_browser->GetActiveShellBrowser()->GetDirectory() == PidlAbsolute(pidl))
+	{
+		m_browser->FocusActiveTab();
+		return;
+	}
+
+	m_browser->OpenItem(pidl, OpenFolderDisposition::CurrentTab);
+	m_browser->FocusActiveTab();
 }
 
 void AddressBar::OnTabSelected(const Tab &tab)
@@ -190,7 +204,49 @@ void AddressBar::UpdateTextAndIcon(const ShellBrowser *shellBrowser, IconUpdateT
 	}
 
 	auto fullPathForDisplay = GetFolderPathForDisplayWithFallback(pidl.Raw());
-	m_view->UpdateTextAndIcon(fullPathForDisplay, iconIndex);
+	m_view->UpdateTextAndIcon(fullPathForDisplay, iconIndex, BuildBreadcrumbSegments(pidl.Raw()));
+}
+
+std::vector<AddressBarView::BreadcrumbSegment> AddressBar::BuildBreadcrumbSegments(
+	PCIDLIST_ABSOLUTE pidl)
+{
+	std::vector<PidlAbsolute> segmentPidls;
+
+	PidlAbsolute currentPidl(pidl);
+
+	while (currentPidl.HasValue())
+	{
+		if (IsNamespaceRoot(currentPidl.Raw()))
+		{
+			break;
+		}
+
+		segmentPidls.push_back(currentPidl);
+
+		if (!currentPidl.RemoveLastItem())
+		{
+			break;
+		}
+	}
+
+	std::reverse(segmentPidls.begin(), segmentPidls.end());
+
+	std::vector<AddressBarView::BreadcrumbSegment> segments;
+	segments.reserve(segmentPidls.size());
+
+	for (const auto &segmentPidl : segmentPidls)
+	{
+		auto text = GetDisplayNameWithFallback(segmentPidl.Raw(), SHGDN_INFOLDER);
+
+		if (text.empty())
+		{
+			text = GetFolderPathForDisplayWithFallback(segmentPidl.Raw());
+		}
+
+		segments.push_back({ text, segmentPidl });
+	}
+
+	return segments;
 }
 
 concurrencpp::null_result AddressBar::RetrieveUpdatedIcon(WeakPtr<AddressBar> weakSelf,

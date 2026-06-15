@@ -4,20 +4,24 @@
 
 #pragma once
 
+#include "CustomFont.h"
+#include "ValueWrapper.h"
 #include "../Helper/SignalWrapper.h"
 #include <optional>
 
 struct Config;
 class WindowSubclass;
 
-// Applies the main font (if any) to a window. If the main font is changed or reset to default, the
+// Applies the configured font (if any) to a window. If the font is changed or reset to default, the
 // window font will be updated. The lifetime of this class should be the same as the lifetime of the
-// window itself, since the class manages the font assigned to the window and that font needs to
-// have the same lifetime as the window.
+// window itself, since the class manages the font assigned to the window and that font needs to have
+// the same lifetime as the window.
 class MainFontSetter
 {
 public:
 	MainFontSetter(HWND hwnd, const Config *config,
+		std::optional<LOGFONT> defaultFontAt96Dpi = std::nullopt);
+	MainFontSetter(HWND hwnd, const ValueWrapper<std::optional<CustomFont>> *fontSetting,
 		std::optional<LOGFONT> defaultFontAt96Dpi = std::nullopt);
 	~MainFontSetter();
 
@@ -33,7 +37,7 @@ private:
 	void UpdateFont();
 
 	HWND m_hwnd;
-	const Config *const m_config;
+	const ValueWrapper<std::optional<CustomFont>> *const m_fontSetting;
 	wil::unique_hfont m_font;
 	const std::optional<LOGFONT> m_defaultFontAt96Dpi;
 

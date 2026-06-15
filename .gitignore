@@ -408,5 +408,8 @@ FodyWeavers.xsd
 
 # Manually added entries
 
+# Local MSBuild overrides
+/Directory.Build.local.props
+
 # vcpkg
 vcpkg_installed/

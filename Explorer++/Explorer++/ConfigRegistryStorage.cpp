@@ -15,6 +15,7 @@ namespace
 {
 
 constexpr wchar_t MAIN_FONT_KEY_NAME[] = L"MainFont";
+constexpr wchar_t FILE_DISPLAY_FONT_KEY_NAME[] = L"FileDisplayFont";
 constexpr wchar_t STARTUP_FOLDERS_KEY_NAME[] = L"StartupFolders";
 
 void LoadFromKey(HKEY settingsKey, Config &config)
@@ -221,6 +222,20 @@ void LoadFromKey(HKEY settingsKey, Config &config)
 		}
 	}
 
+	wil::unique_hkey fileDisplayFontKey;
+	hr = wil::reg::open_unique_key_nothrow(settingsKey, FILE_DISPLAY_FONT_KEY_NAME,
+		fileDisplayFontKey, wil::reg::key_access::read);
+
+	if (SUCCEEDED(hr))
+	{
+		auto fileDisplayFont = CustomFontStorage::LoadFromRegistry(fileDisplayFontKey.get());
+
+		if (fileDisplayFont)
+		{
+			config.fileDisplayFont = *fileDisplayFont;
+		}
+	}
+
 	wil::unique_hkey startupFoldersKey;
 	hr = wil::reg::open_unique_key_nothrow(settingsKey, STARTUP_FOLDERS_KEY_NAME, startupFoldersKey,
 		wil::reg::key_access::read);
@@ -355,6 +370,20 @@ void SaveToKey(HKEY settingsKey, const Config &config)
 		if (SUCCEEDED(hr))
 		{
 			CustomFontStorage::SaveToRegistry(mainFontKey.get(), *mainFont);
+		}
+	}
+
+	auto &fileDisplayFont = config.fileDisplayFont.get();
+
+	if (fileDisplayFont)
+	{
+		wil::unique_hkey fileDisplayFontKey;
+		HRESULT hr = wil::reg::create_unique_key_nothrow(settingsKey,
+			FILE_DISPLAY_FONT_KEY_NAME, fileDisplayFontKey, wil::reg::key_access::readwrite);
+
+		if (SUCCEEDED(hr))
+		{
+			CustomFontStorage::SaveToRegistry(fileDisplayFontKey.get(), *fileDisplayFont);
 		}
 	}
 

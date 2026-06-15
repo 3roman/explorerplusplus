@@ -77,10 +77,10 @@ bool BrowserCommandController::IsCommandEnabled(int command) const
 		return GetActiveShellBrowser()->CanStartWildcardSelection(SelectionType::Deselect);
 
 	case IDM_VIEW_DECREASE_TEXT_SIZE:
-		return CanChangeMainFontSize(FontSizeType::Decrease);
+		return CanChangeFileDisplayFontSize(FontSizeType::Decrease);
 
 	case IDM_VIEW_INCREASE_TEXT_SIZE:
-		return CanChangeMainFontSize(FontSizeType::Increase);
+		return CanChangeFileDisplayFontSize(FontSizeType::Increase);
 
 	case IDM_VIEW_AUTOSIZECOLUMNS:
 		return GetActiveShellBrowser()->CanAutoSizeColumns();
@@ -135,22 +135,22 @@ bool BrowserCommandController::CanStartCommandPrompt() const
 	return true;
 }
 
-bool BrowserCommandController::CanChangeMainFontSize(FontSizeType sizeType) const
+bool BrowserCommandController::CanChangeFileDisplayFontSize(FontSizeType sizeType) const
 {
-	auto &mainFont = m_config->mainFont.get();
+	auto &fileDisplayFont = m_config->fileDisplayFont.get();
 
-	if (!mainFont)
+	if (!fileDisplayFont)
 	{
 		return true;
 	}
 
 	if (sizeType == FontSizeType::Decrease)
 	{
-		return mainFont->GetSize() > CustomFont::MINIMUM_SIZE;
+		return fileDisplayFont->GetSize() > CustomFont::MINIMUM_SIZE;
 	}
 	else
 	{
-		return mainFont->GetSize() < CustomFont::MAXIMUM_SIZE;
+		return fileDisplayFont->GetSize() < CustomFont::MAXIMUM_SIZE;
 	}
 }
 
@@ -250,15 +250,15 @@ void BrowserCommandController::ExecuteCommand(int command, OpenFolderDisposition
 		break;
 
 	case IDM_VIEW_DECREASE_TEXT_SIZE:
-		OnChangeMainFontSize(FontSizeType::Decrease);
+		OnChangeFileDisplayFontSize(FontSizeType::Decrease);
 		break;
 
 	case IDM_VIEW_INCREASE_TEXT_SIZE:
-		OnChangeMainFontSize(FontSizeType::Increase);
+		OnChangeFileDisplayFontSize(FontSizeType::Increase);
 		break;
 
 	case IDA_RESET_TEXT_SIZE:
-		OnResetMainFontSize();
+		OnResetFileDisplayFontSize();
 		break;
 
 	case IDM_VIEW_EXTRALARGEICONS:
@@ -544,16 +544,16 @@ void BrowserCommandController::CopyFolderPath() const
 	CopyItemPathsToClipboard(m_clipboardStore, { shellBrowser->GetDirectory() }, PathType::Parsing);
 }
 
-void BrowserCommandController::OnChangeMainFontSize(FontSizeType sizeType)
+void BrowserCommandController::OnChangeFileDisplayFontSize(FontSizeType sizeType)
 {
-	auto &mainFont = m_config->mainFont.get();
+	auto &fileDisplayFont = m_config->fileDisplayFont.get();
 	std::wstring updatedFontName;
 	int updatedFontSize;
 
-	if (mainFont)
+	if (fileDisplayFont)
 	{
-		updatedFontName = mainFont->GetName();
-		updatedFontSize = mainFont->GetSize();
+		updatedFontName = fileDisplayFont->GetName();
+		updatedFontSize = fileDisplayFont->GetSize();
 	}
 	else
 	{
@@ -574,14 +574,14 @@ void BrowserCommandController::OnChangeMainFontSize(FontSizeType sizeType)
 		updatedFontSize += FONT_SIZE_CHANGE_DELTA;
 	}
 
-	m_config->mainFont = CustomFont(updatedFontName, updatedFontSize);
+	m_config->fileDisplayFont = CustomFont(updatedFontName, updatedFontSize);
 }
 
-void BrowserCommandController::OnResetMainFontSize()
+void BrowserCommandController::OnResetFileDisplayFontSize()
 {
-	auto &mainFont = m_config->mainFont.get();
+	auto &fileDisplayFont = m_config->fileDisplayFont.get();
 
-	if (!mainFont)
+	if (!fileDisplayFont)
 	{
 		// The default font is being used, so the font size is currently the default size and
 		// nothing needs to change.
@@ -596,7 +596,7 @@ void BrowserCommandController::OnResetMainFontSize()
 	// font size. The size of the default system font is taken as a reasonable proxy. This also
 	// means that if the user only changes the font size (while still using the system font),
 	// resetting the font size will work as expected.
-	m_config->mainFont = CustomFont(mainFont->GetName(), systemFontSize);
+	m_config->fileDisplayFont = CustomFont(fileDisplayFont->GetName(), systemFontSize);
 }
 
 void BrowserCommandController::OnChangeDisplayColors()

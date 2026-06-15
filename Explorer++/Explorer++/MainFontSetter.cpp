@@ -11,8 +11,15 @@
 
 MainFontSetter::MainFontSetter(HWND hwnd, const Config *config,
 	std::optional<LOGFONT> defaultFontAt96Dpi) :
+	MainFontSetter(hwnd, &config->mainFont, defaultFontAt96Dpi)
+{
+}
+
+MainFontSetter::MainFontSetter(HWND hwnd,
+	const ValueWrapper<std::optional<CustomFont>> *fontSetting,
+	std::optional<LOGFONT> defaultFontAt96Dpi) :
 	m_hwnd(hwnd),
-	m_config(config),
+	m_fontSetting(fontSetting),
 	m_defaultFontAt96Dpi(defaultFontAt96Dpi)
 {
 	SubclassWindowForDpiChanges();
@@ -20,7 +27,7 @@ MainFontSetter::MainFontSetter(HWND hwnd, const Config *config,
 	UpdateFont();
 
 	m_connections.push_back(
-		m_config->mainFont.addObserver(std::bind(&MainFontSetter::UpdateFont, this)));
+		m_fontSetting->addObserver(std::bind(&MainFontSetter::UpdateFont, this)));
 }
 
 MainFontSetter::~MainFontSetter() = default;
@@ -45,7 +52,7 @@ LRESULT MainFontSetter::WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lPara
 
 void MainFontSetter::OnDpiChanged()
 {
-	if (!m_config->mainFont.get() && !m_defaultFontAt96Dpi)
+	if (!m_fontSetting->get() && !m_defaultFontAt96Dpi)
 	{
 		// In this situation, the control is using its default font, so there's no need to perform
 		// any manual updates.
@@ -104,7 +111,7 @@ void MainFontSetter::UpdateFont()
 	// WM_SETFONT, which will reset the font back to the default system font.
 	wil::unique_hfont updatedFont;
 
-	auto &mainFont = m_config->mainFont.get();
+	auto &mainFont = m_fontSetting->get();
 
 	if (mainFont)
 	{

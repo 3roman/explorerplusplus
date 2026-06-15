@@ -19,6 +19,7 @@ Config BuildReference()
 	config.displayWindowCentreColor = RGB(255, 0, 0);
 	config.displayWindowSurroundColor = RGB(0, 255, 0);
 	config.displayWindowTextColor = RGB(128, 128, 128);
+	config.fileDisplayFont = CustomFont(L"File display font", 13);
 	config.globalFolderSettings.forceSize = true;
 	config.globalFolderSettings.oneClickActivate = true;
 	config.globalFolderSettings.oneClickActivateHoverTime = 40;

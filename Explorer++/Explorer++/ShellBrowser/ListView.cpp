@@ -292,7 +292,8 @@ void ShellBrowserImpl::OnListViewDoubleClick(const NMITEMACTIVATE *eventInfo)
 	else
 	{
 		m_browser->OpenItem(item.pidlComplete.Raw(),
-			DetermineOpenDisposition(false, WI_IsFlagSet(eventInfo->uKeyFlags, LVKF_CONTROL),
+			DetermineOpenDispositionWithShiftOpeningNewTab(false,
+				WI_IsFlagSet(eventInfo->uKeyFlags, LVKF_CONTROL),
 				WI_IsFlagSet(eventInfo->uKeyFlags, LVKF_SHIFT)));
 	}
 }
@@ -362,7 +363,7 @@ void ShellBrowserImpl::OnListViewMButtonUp(const POINT *pt, UINT keysDown)
 	}
 
 	m_browser->OpenItem(itemInfo.pidlComplete.Raw(),
-		DetermineOpenDisposition(true, WI_IsFlagSet(keysDown, MK_CONTROL),
+		DetermineOpenDispositionWithShiftOpeningNewTab(true, WI_IsFlagSet(keysDown, MK_CONTROL),
 			WI_IsFlagSet(keysDown, MK_SHIFT)));
 }
 
@@ -564,7 +565,13 @@ void ShellBrowserImpl::OnListViewGetDisplayInfo(LPARAM lParam)
 		&& (plvItem->mask & LVIF_IMAGE) == LVIF_IMAGE)
 	{
 		const ItemInfo_t &itemInfo = m_itemInfoMap.at(internalIndex);
-		auto cachedThumbnailIndex = GetCachedThumbnailIndex(itemInfo);
+		bool useFastNetworkItemIcon = ShouldUseFastNetworkItemIcon(itemInfo);
+		std::optional<int> cachedThumbnailIndex;
+
+		if (!useFastNetworkItemIcon)
+		{
+			cachedThumbnailIndex = GetCachedThumbnailIndex(itemInfo);
+		}
 
 		if (cachedThumbnailIndex)
 		{
@@ -577,7 +584,10 @@ void ShellBrowserImpl::OnListViewGetDisplayInfo(LPARAM lParam)
 
 		plvItem->mask |= LVIF_DI_SETITEM;
 
-		QueueThumbnailTask(internalIndex);
+		if (!useFastNetworkItemIcon)
+		{
+			QueueThumbnailTask(internalIndex);
+		}
 
 		return;
 	}
@@ -594,6 +604,10 @@ void ShellBrowserImpl::OnListViewGetDisplayInfo(LPARAM lParam)
 	{
 		const ItemInfo_t &itemInfo = m_itemInfoMap.at(internalIndex);
 		auto cachedIconIndex = m_cachedIcons->MaybeGetIconIndex(itemInfo.parsingName);
+		bool isDirectory =
+			WI_IsFlagSet(itemInfo.wfd.dwFileAttributes, FILE_ATTRIBUTE_DIRECTORY);
+		bool useFastNetworkItemIcon = ShouldUseFastNetworkItemIcon(itemInfo);
+		bool queueIconTask = !useFastNetworkItemIcon;
 
 		if (cachedIconIndex)
 		{
@@ -603,23 +617,65 @@ void ShellBrowserImpl::OnListViewGetDisplayInfo(LPARAM lParam)
 		}
 		else
 		{
-			if ((itemInfo.wfd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY)
-				== FILE_ATTRIBUTE_DIRECTORY)
+			if (isDirectory)
 			{
 				plvItem->iImage = m_iFolderIcon;
+
+				if (useFastNetworkItemIcon)
+				{
+					m_cachedIcons->AddOrUpdateIcon(itemInfo.parsingName, plvItem->iImage);
+				}
 			}
 			else
 			{
 				plvItem->iImage = m_iFileIcon;
+
+				if (useFastNetworkItemIcon)
+				{
+					auto fastIconIndex = MaybeGetFastNetworkIconIndex(itemInfo);
+
+					if (fastIconIndex)
+					{
+						plvItem->iImage = *fastIconIndex;
+						m_cachedIcons->AddOrUpdateIcon(itemInfo.parsingName, *fastIconIndex);
+					}
+				}
 			}
 		}
 
-		m_iconFetcher->QueueIconTask(itemInfo.pidlComplete.Raw(),
-			[this, internalIndex](int iconIndex, int overlayIndex)
-			{ ProcessIconResult(internalIndex, iconIndex, overlayIndex); });
+		if (queueIconTask)
+		{
+			m_iconFetcher->QueueIconTask(itemInfo.pidlComplete.Raw(),
+				[this, internalIndex](int iconIndex, int overlayIndex)
+				{ ProcessIconResult(internalIndex, iconIndex, overlayIndex); });
+		}
+	}
+	plvItem->mask |= LVIF_DI_SETITEM;
+}
+
+bool ShellBrowserImpl::ShouldUseFastNetworkItemIcon(const ItemInfo_t &itemInfo) const
+{
+	return !m_directoryState.virtualFolder && !itemInfo.parsingName.empty()
+		&& PathIsNetworkPath(m_directoryState.directory.c_str());
+}
+
+std::optional<int> ShellBrowserImpl::MaybeGetFastNetworkIconIndex(const ItemInfo_t &itemInfo) const
+{
+	if (WI_IsFlagSet(itemInfo.wfd.dwFileAttributes, FILE_ATTRIBUTE_DIRECTORY))
+	{
+		return m_iFolderIcon;
 	}
 
-	plvItem->mask |= LVIF_DI_SETITEM;
+	SHFILEINFO shfi;
+	DWORD_PTR res = SHGetFileInfo(itemInfo.parsingName.c_str(), itemInfo.wfd.dwFileAttributes,
+		&shfi, sizeof(shfi), SHGFI_SYSICONINDEX | SHGFI_USEFILEATTRIBUTES);
+
+	if (res == 0)
+	{
+		return std::nullopt;
+	}
+
+	return shfi.iIcon;
 }
 
 void ShellBrowserImpl::ProcessIconResult(int internalIndex, int iconIndex, int overlayIndex)
@@ -688,6 +744,11 @@ void ShellBrowserImpl::QueueInfoTipTask(int internalIndex, const std::wstring &e
 			if (result && !existingInfoTip.empty())
 			{
 				result->infoTip = existingInfoTip + L"\n" + result->infoTip;
+			}
+
+			if (!result)
+			{
+				PostMessage(m_listView, WM_APP_INFO_TIP_READY, infoTipResultId, 0);
 			}
 
 			return result;

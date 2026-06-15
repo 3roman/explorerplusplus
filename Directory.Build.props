@@ -1,3 +1,4 @@
 <Project>
+ <Import Project="$(MSBuildThisFileDirectory)Directory.Build.local.props" Condition="Exists('$(MSBuildThisFileDirectory)Directory.Build.local.props')" />
  <Import Project="$(MSBuildThisFileDirectory)Explorer++\ThirdParty\vcpkg\scripts\buildsystems\msbuild\vcpkg.props" />
 </Project>

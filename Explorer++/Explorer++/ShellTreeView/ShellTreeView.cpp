@@ -621,6 +621,16 @@ void ShellTreeView::HandleSelectionChanged(const NMTREEVIEW *eventInfo)
 		return;
 	}
 
+	auto disposition =
+		DetermineOpenDispositionWithShiftOpeningNewTab(false, IsKeyDown(VK_CONTROL),
+			IsKeyDown(VK_SHIFT));
+
+	if (disposition != OpenFolderDisposition::CurrentTab)
+	{
+		m_browser->OpenItem(pidlDirectory.get(), disposition);
+		return;
+	}
+
 	auto navigateParams = NavigateParams::Normal(pidlDirectory.get());
 	shellBrowser->GetNavigationController()->Navigate(navigateParams);
 
@@ -1129,7 +1139,7 @@ void ShellTreeView::OnMiddleButtonUp(const POINT *pt, UINT keysDown)
 
 	auto pidl = GetNodePidl(hitTestInfo.hItem);
 	m_browser->OpenItem(pidl.get(),
-		DetermineOpenDisposition(true, WI_IsFlagSet(keysDown, MK_CONTROL),
+		DetermineOpenDispositionWithShiftOpeningNewTab(true, WI_IsFlagSet(keysDown, MK_CONTROL),
 			WI_IsFlagSet(keysDown, MK_SHIFT)));
 }
 

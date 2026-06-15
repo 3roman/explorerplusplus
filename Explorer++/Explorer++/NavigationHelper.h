@@ -27,3 +27,6 @@ OpenFolderDisposition DetermineOpenDisposition(bool isMiddleButtonDown);
 
 OpenFolderDisposition DetermineOpenDisposition(bool isMiddleButtonDown, bool isCtrlKeyDown,
 	bool isShiftKeyDown);
+
+OpenFolderDisposition DetermineOpenDispositionWithShiftOpeningNewTab(bool isMiddleButtonDown,
+	bool isCtrlKeyDown, bool isShiftKeyDown);

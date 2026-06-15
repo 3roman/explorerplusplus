@@ -82,11 +82,13 @@ void ShellBrowserImpl::ClearPendingResults()
 {
 	m_columnThreadPool.clear_queue();
 	m_columnResults.clear();
+	m_pendingColumnTasks.clear();
 
 	m_iconFetcher->ClearQueue();
 
 	m_thumbnailThreadPool.clear_queue();
 	m_thumbnailResults.clear();
+	m_pendingThumbnailTasks.clear();
 
 	m_infoTipsThreadPool.clear_queue();
 	m_infoTipResults.clear();

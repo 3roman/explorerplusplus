@@ -78,6 +78,7 @@ struct Config
 	InfoTipType infoTipType = InfoTipType::System;
 
 	ValueWrapper<std::optional<CustomFont>> mainFont;
+	ValueWrapper<std::optional<CustomFont>> fileDisplayFont;
 
 	// Startup
 	StartupMode startupMode = StartupMode::PreviousTabs;

@@ -42,14 +42,14 @@ private:
 	bool IsCommandContextSensitive(int command) const;
 
 	bool CanStartCommandPrompt() const;
-	bool CanChangeMainFontSize(FontSizeType sizeType) const;
+	bool CanChangeFileDisplayFontSize(FontSizeType sizeType) const;
 
 	void OnSortBy(SortMode sortMode);
 	void OnCloseTab();
 	void StartCommandPrompt(LaunchProcessFlags flags = LaunchProcessFlags::None);
 	void CopyFolderPath() const;
-	void OnChangeMainFontSize(FontSizeType sizeType);
-	void OnResetMainFontSize();
+	void OnChangeFileDisplayFontSize(FontSizeType sizeType);
+	void OnResetFileDisplayFontSize();
 	void OnChangeDisplayColors();
 	void GoBack(OpenFolderDisposition disposition);
 	void GoForward(OpenFolderDisposition disposition);

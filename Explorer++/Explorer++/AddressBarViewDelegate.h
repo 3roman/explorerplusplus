@@ -4,6 +4,8 @@
 
 #pragma once
 
+#include <shtypes.h>
+
 // Allows the AddressBarView controller to be notified of events that occur within the view.
 class AddressBarViewDelegate
 {
@@ -13,4 +15,5 @@ public:
 	virtual bool OnKeyPressed(UINT key) = 0;
 	virtual void OnBeginDrag() = 0;
 	virtual void OnFocused() = 0;
+	virtual void OnBreadcrumbSegmentClicked(PCIDLIST_ABSOLUTE pidl) = 0;
 };

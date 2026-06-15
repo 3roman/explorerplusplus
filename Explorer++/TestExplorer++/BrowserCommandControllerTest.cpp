@@ -76,62 +76,69 @@ TEST_F(BrowserCommandControllerTest, CopyFolderPath)
 	EXPECT_THAT(*clipboardText, StrCaseEq(path));
 }
 
-TEST_F(BrowserCommandControllerTest, CanChangeMainFontSize)
+TEST_F(BrowserCommandControllerTest, CanChangeFileDisplayFontSize)
 {
-	m_config.mainFont = std::nullopt;
+	m_config.fileDisplayFont = std::nullopt;
 	EXPECT_TRUE(m_commandController.IsCommandEnabled(IDM_VIEW_DECREASE_TEXT_SIZE));
 	EXPECT_TRUE(m_commandController.IsCommandEnabled(IDM_VIEW_INCREASE_TEXT_SIZE));
 
-	m_config.mainFont = CustomFont(L"Font name", CustomFont::MINIMUM_SIZE + 1);
+	m_config.fileDisplayFont = CustomFont(L"Font name", CustomFont::MINIMUM_SIZE + 1);
 	EXPECT_TRUE(m_commandController.IsCommandEnabled(IDM_VIEW_DECREASE_TEXT_SIZE));
 	EXPECT_TRUE(m_commandController.IsCommandEnabled(IDM_VIEW_INCREASE_TEXT_SIZE));
 
-	m_config.mainFont = CustomFont(L"Font name", CustomFont::MINIMUM_SIZE);
+	m_config.fileDisplayFont = CustomFont(L"Font name", CustomFont::MINIMUM_SIZE);
 	EXPECT_FALSE(m_commandController.IsCommandEnabled(IDM_VIEW_DECREASE_TEXT_SIZE));
 	EXPECT_TRUE(m_commandController.IsCommandEnabled(IDM_VIEW_INCREASE_TEXT_SIZE));
 
-	m_config.mainFont = CustomFont(L"Font name", CustomFont::MAXIMUM_SIZE);
+	m_config.fileDisplayFont = CustomFont(L"Font name", CustomFont::MAXIMUM_SIZE);
 	EXPECT_TRUE(m_commandController.IsCommandEnabled(IDM_VIEW_DECREASE_TEXT_SIZE));
 	EXPECT_FALSE(m_commandController.IsCommandEnabled(IDM_VIEW_INCREASE_TEXT_SIZE));
 }
 
-TEST_F(BrowserCommandControllerTest, ChangeMainFontSize)
+TEST_F(BrowserCommandControllerTest, ChangeFileDisplayFontSize)
 {
 	const std::wstring fontName = L"Font name";
-	m_config.mainFont = CustomFont(fontName, 10);
+	m_config.mainFont = CustomFont(L"Main font", 12);
+	m_config.fileDisplayFont = CustomFont(fontName, 10);
 
 	m_commandController.ExecuteCommand(IDM_VIEW_DECREASE_TEXT_SIZE);
-	EXPECT_EQ(m_config.mainFont.get(), CustomFont(fontName, 9));
+	EXPECT_EQ(m_config.fileDisplayFont.get(), CustomFont(fontName, 9));
+	EXPECT_EQ(m_config.mainFont.get(), CustomFont(L"Main font", 12));
 
 	m_commandController.ExecuteCommand(IDM_VIEW_INCREASE_TEXT_SIZE);
-	EXPECT_EQ(m_config.mainFont.get(), CustomFont(fontName, 10));
+	EXPECT_EQ(m_config.fileDisplayFont.get(), CustomFont(fontName, 10));
+	EXPECT_EQ(m_config.mainFont.get(), CustomFont(L"Main font", 12));
 
 	// If no custom font is currently set and a font size change is requested, a custom font should
 	// be assigned.
-	m_config.mainFont = std::nullopt;
+	m_config.fileDisplayFont = std::nullopt;
 	m_commandController.ExecuteCommand(IDM_VIEW_DECREASE_TEXT_SIZE);
-	EXPECT_NE(m_config.mainFont.get(), std::nullopt);
+	EXPECT_NE(m_config.fileDisplayFont.get(), std::nullopt);
+	EXPECT_EQ(m_config.mainFont.get(), CustomFont(L"Main font", 12));
 
-	m_config.mainFont = std::nullopt;
+	m_config.fileDisplayFont = std::nullopt;
 	m_commandController.ExecuteCommand(IDM_VIEW_INCREASE_TEXT_SIZE);
-	EXPECT_NE(m_config.mainFont.get(), std::nullopt);
+	EXPECT_NE(m_config.fileDisplayFont.get(), std::nullopt);
+	EXPECT_EQ(m_config.mainFont.get(), CustomFont(L"Main font", 12));
 }
 
-TEST_F(BrowserCommandControllerTest, ResetMainFontSize)
+TEST_F(BrowserCommandControllerTest, ResetFileDisplayFontSize)
 {
 	// If there is no custom font assigned, resetting the font size should have no effect.
-	m_config.mainFont = std::nullopt;
+	m_config.fileDisplayFont = std::nullopt;
 	m_commandController.ExecuteCommand(IDA_RESET_TEXT_SIZE);
-	EXPECT_EQ(m_config.mainFont.get(), std::nullopt);
+	EXPECT_EQ(m_config.fileDisplayFont.get(), std::nullopt);
 
 	const std::wstring fontName = L"Font name";
-	m_config.mainFont = CustomFont(fontName, 10);
+	m_config.mainFont = CustomFont(L"Main font", 12);
+	m_config.fileDisplayFont = CustomFont(fontName, 10);
 
 	// Resetting the font size shouldn't change the name of the font.
 	m_commandController.ExecuteCommand(IDA_RESET_TEXT_SIZE);
-	const auto &mainFont = m_config.mainFont.get();
-	ASSERT_NE(mainFont, std::nullopt);
-	EXPECT_EQ(mainFont->GetName(), fontName);
+	const auto &fileDisplayFont = m_config.fileDisplayFont.get();
+	ASSERT_NE(fileDisplayFont, std::nullopt);
+	EXPECT_EQ(fileDisplayFont->GetName(), fontName);
+	EXPECT_EQ(m_config.mainFont.get(), CustomFont(L"Main font", 12));
 }
 
 TEST_F(BrowserCommandControllerTest, Refresh)

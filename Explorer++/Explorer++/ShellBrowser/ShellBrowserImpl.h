@@ -230,6 +230,26 @@ private:
 		std::wstring columnText;
 	};
 
+	struct PendingColumnTask
+	{
+		int itemInternalIndex;
+		ColumnType columnType;
+
+		bool operator==(const PendingColumnTask &other) const
+		{
+			return itemInternalIndex == other.itemInternalIndex && columnType == other.columnType;
+		}
+	};
+
+	struct PendingColumnTaskHash
+	{
+		std::size_t operator()(const PendingColumnTask &task) const
+		{
+			return std::hash<int>()(task.itemInternalIndex)
+				^ (std::hash<int>()(task.columnType._to_integral()) << 1);
+		}
+	};
+
 	struct ThumbnailResult_t
 	{
 		int itemInternalIndex;
@@ -573,6 +593,8 @@ private:
 	std::optional<int> GetItemGroupId(int index);
 
 	/* Listview icons. */
+	bool ShouldUseFastNetworkItemIcon(const ItemInfo_t &itemInfo) const;
+	std::optional<int> MaybeGetFastNetworkIconIndex(const ItemInfo_t &itemInfo) const;
 	void ProcessIconResult(int internalIndex, int iconIndex, int overlayIndex);
 
 	/* Thumbnails view. */
@@ -654,13 +676,15 @@ private:
 
 	ctpl::thread_pool m_columnThreadPool;
 	std::unordered_map<int, std::future<ColumnResult_t>> m_columnResults;
+	std::unordered_set<PendingColumnTask, PendingColumnTaskHash> m_pendingColumnTasks;
 	int m_columnResultIDCounter;
 
 	std::unique_ptr<IconFetcher> m_iconFetcher;
 	CachedIcons *m_cachedIcons;
 
 	ctpl::thread_pool m_thumbnailThreadPool;
-	std::unordered_map<int, std::future<std::optional<ThumbnailResult_t>>> m_thumbnailResults;
+	std::unordered_map<int, std::future<ThumbnailResult_t>> m_thumbnailResults;
+	std::unordered_set<int> m_pendingThumbnailTasks;
 	int m_thumbnailResultIDCounter;
 
 	ctpl::thread_pool m_infoTipsThreadPool;
