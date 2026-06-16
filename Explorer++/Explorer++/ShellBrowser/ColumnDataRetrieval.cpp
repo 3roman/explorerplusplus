@@ -17,8 +17,10 @@
 #include <IPHlpApi.h>
 #include <propkey.h>
 #include <filesystem>
+#include <optional>
 
 BOOL GetPrinterStatusDescription(DWORD dwStatus, TCHAR *szStatus, size_t cchMax);
+std::optional<WIN32_FIND_DATA> GetFindDataForColumn(const BasicItemInfo_t &itemInfo);
 
 std::wstring GetColumnText(ColumnType columnType, const BasicItemInfo_t &basicItemInfo,
 	const GlobalFolderSettings &globalFolderSettings)
@@ -248,12 +250,14 @@ std::wstring GetTypeColumnText(const BasicItemInfo_t &itemInfo)
 std::wstring GetSizeColumnText(const BasicItemInfo_t &itemInfo,
 	const GlobalFolderSettings &globalFolderSettings)
 {
-	if (!itemInfo.isFindDataValid)
+	auto findData = GetFindDataForColumn(itemInfo);
+
+	if (!findData)
 	{
 		return L"";
 	}
 
-	if ((itemInfo.wfd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) == FILE_ATTRIBUTE_DIRECTORY)
+	if ((findData->dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) == FILE_ATTRIBUTE_DIRECTORY)
 	{
 		TCHAR drive[MAX_PATH];
 		StringCchCopy(drive, std::size(drive), itemInfo.getFullPath().c_str());
@@ -277,7 +281,7 @@ std::wstring GetSizeColumnText(const BasicItemInfo_t &itemInfo,
 		}
 	}
 
-	ULARGE_INTEGER fileSize = { { itemInfo.wfd.nFileSizeLow, itemInfo.wfd.nFileSizeHigh } };
+	ULARGE_INTEGER fileSize = { { findData->nFileSizeLow, findData->nFileSizeHigh } };
 	auto displayFormat = globalFolderSettings.forceSize ? globalFolderSettings.sizeDisplayFormat
 														: +SizeDisplayFormat::None;
 	return FormatSizeString(fileSize.QuadPart, displayFormat);
@@ -302,7 +306,9 @@ std::wstring GetFolderSizeColumnText(const BasicItemInfo_t &itemInfo,
 std::wstring GetTimeColumnText(const BasicItemInfo_t &itemInfo, TimeType timeType,
 	const GlobalFolderSettings &globalFolderSettings)
 {
-	if (!itemInfo.isFindDataValid)
+	auto findData = GetFindDataForColumn(itemInfo);
+
+	if (!findData)
 	{
 		return L"";
 	}
@@ -313,17 +319,17 @@ std::wstring GetTimeColumnText(const BasicItemInfo_t &itemInfo, TimeType timeTyp
 	switch (timeType)
 	{
 	case TimeType::Modified:
-		bRet = CreateFileTimeString(&itemInfo.wfd.ftLastWriteTime, fileTime, std::size(fileTime),
+		bRet = CreateFileTimeString(&findData->ftLastWriteTime, fileTime, std::size(fileTime),
 			globalFolderSettings.showFriendlyDates);
 		break;
 
 	case TimeType::Created:
-		bRet = CreateFileTimeString(&itemInfo.wfd.ftCreationTime, fileTime, std::size(fileTime),
+		bRet = CreateFileTimeString(&findData->ftCreationTime, fileTime, std::size(fileTime),
 			globalFolderSettings.showFriendlyDates);
 		break;
 
 	case TimeType::Accessed:
-		bRet = CreateFileTimeString(&itemInfo.wfd.ftLastAccessTime, fileTime, std::size(fileTime),
+		bRet = CreateFileTimeString(&findData->ftLastAccessTime, fileTime, std::size(fileTime),
 			globalFolderSettings.showFriendlyDates);
 		break;
 
@@ -358,7 +364,9 @@ std::wstring GetRealSizeColumnText(const BasicItemInfo_t &itemInfo,
 
 bool GetRealSizeColumnRawData(const BasicItemInfo_t &itemInfo, ULARGE_INTEGER &RealFileSize)
 {
-	if ((itemInfo.wfd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) == FILE_ATTRIBUTE_DIRECTORY)
+	auto findData = GetFindDataForColumn(itemInfo);
+
+	if (!findData || (findData->dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) == FILE_ATTRIBUTE_DIRECTORY)
 	{
 		return false;
 	}
@@ -375,7 +383,7 @@ bool GetRealSizeColumnRawData(const BasicItemInfo_t &itemInfo, ULARGE_INTEGER &R
 		return false;
 	}
 
-	ULARGE_INTEGER realFileSizeTemp = { { itemInfo.wfd.nFileSizeLow, itemInfo.wfd.nFileSizeHigh } };
+	ULARGE_INTEGER realFileSizeTemp = { { findData->nFileSizeLow, findData->nFileSizeHigh } };
 
 	if (realFileSizeTemp.QuadPart != 0 && (realFileSizeTemp.QuadPart % dwClusterSize) != 0)
 	{
@@ -389,12 +397,35 @@ bool GetRealSizeColumnRawData(const BasicItemInfo_t &itemInfo, ULARGE_INTEGER &R
 
 std::wstring GetAttributeColumnText(const BasicItemInfo_t &itemInfo)
 {
-	if (!itemInfo.isFindDataValid)
+	auto findData = GetFindDataForColumn(itemInfo);
+
+	if (!findData)
 	{
 		return {};
 	}
 
-	return BuildFileAttributesString(itemInfo.wfd.dwFileAttributes);
+	return BuildFileAttributesString(findData->dwFileAttributes);
+}
+
+std::optional<WIN32_FIND_DATA> GetFindDataForColumn(const BasicItemInfo_t &itemInfo)
+{
+	if (itemInfo.isFindDataValid)
+	{
+		return itemInfo.wfd;
+	}
+
+	WIN32_FIND_DATA findData;
+	auto fullPath = itemInfo.getFullPath();
+	HANDLE findHandle = FindFirstFile(fullPath.c_str(), &findData);
+
+	if (findHandle == INVALID_HANDLE_VALUE)
+	{
+		return std::nullopt;
+	}
+
+	FindClose(findHandle);
+
+	return findData;
 }
 
 std::wstring GetShortNameColumnText(const BasicItemInfo_t &itemInfo)

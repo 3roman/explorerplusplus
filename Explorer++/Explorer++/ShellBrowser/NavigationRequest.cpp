@@ -130,11 +130,16 @@ concurrencpp::null_result NavigationRequest::StartInternal(WeakPtr<NavigationReq
 	}
 
 	std::vector<PidlChild> items;
+	auto itemBatchCallback = [weakSelf, originalExecutor](std::vector<PidlChild> batch)
+	{
+		DispatchItemBatch(weakSelf, originalExecutor, std::move(batch));
+	};
+
 	hr = shellEnumerator->EnumerateDirectory(navigateParams.pidl.Raw(),
 		ShellItemFilter::ItemType::FoldersAndFiles,
 		showHidden ? ShellItemFilter::HiddenItemPolicy::Include
 				   : ShellItemFilter::HiddenItemPolicy::Exclude,
-		items, stopToken);
+		items, stopToken, itemBatchCallback);
 
 	co_await concurrencpp::resume_on(originalExecutor);
 
@@ -160,6 +165,23 @@ concurrencpp::null_result NavigationRequest::StartInternal(WeakPtr<NavigationReq
 	}
 
 	weakSelf->m_delegate->OnEnumerationCompleted(weakSelf.Get());
+}
+
+void NavigationRequest::DispatchItemBatch(WeakPtr<NavigationRequest> weakSelf,
+	std::shared_ptr<concurrencpp::executor> originalExecutor, std::vector<PidlChild> items)
+{
+	auto sharedItems = std::make_shared<std::vector<PidlChild>>(std::move(items));
+
+	originalExecutor->submit(
+		[weakSelf, sharedItems]
+		{
+			if (!weakSelf)
+			{
+				return;
+			}
+
+			weakSelf->m_navigationEvents->NotifyItemsEnumerated(weakSelf.Get(), *sharedItems);
+		});
 }
 
 void NavigationRequest::SetState(State state)

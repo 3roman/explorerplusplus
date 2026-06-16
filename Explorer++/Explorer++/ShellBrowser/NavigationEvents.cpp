@@ -13,6 +13,14 @@ boost::signals2::connection NavigationEvents::AddStartedObserver(
 		MakeFilteredObserver(observer, scope), position);
 }
 
+boost::signals2::connection NavigationEvents::AddItemsEnumeratedObserver(
+	const NavigationItemsSignal::slot_type &observer, const NavigationEventScope &scope,
+	boost::signals2::connect_position position, SlotGroup slotGroup)
+{
+	return m_itemsEnumeratedSignal.connect(static_cast<int>(slotGroup),
+		MakeFilteredObserver(observer, scope), position);
+}
+
 boost::signals2::connection NavigationEvents::AddWillCommitObserver(
 	const NavigationSignal::slot_type &observer, const NavigationEventScope &scope,
 	boost::signals2::connect_position position, SlotGroup slotGroup)
@@ -56,6 +64,12 @@ boost::signals2::connection NavigationEvents::AddStoppedObserver(
 void NavigationEvents::NotifyStarted(const NavigationRequest *request)
 {
 	m_startedSignal(request);
+}
+
+void NavigationEvents::NotifyItemsEnumerated(const NavigationRequest *request,
+	const std::vector<PidlChild> &items)
+{
+	m_itemsEnumeratedSignal(request, items);
 }
 
 void NavigationEvents::NotifyWillCommit(const NavigationRequest *request)

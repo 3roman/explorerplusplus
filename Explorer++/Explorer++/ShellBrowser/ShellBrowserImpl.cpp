@@ -73,12 +73,7 @@ ShellBrowserImpl::ShellBrowserImpl(HWND owner, App *app, BrowserWindow *browser,
 	m_browser(browser),
 	m_shellEnumerator(std::make_shared<ShellEnumeratorImpl>(owner)),
 	m_navigationManager(this, app->GetNavigationEvents(), m_shellEnumerator,
-		app->GetFeatureList()->IsEnabled(Feature::BackgroundThreadEnumeration)
-			? app->GetRuntime()->GetComStaExecutor()
-			: app->GetRuntime()->GetInlineExecutor(),
-		app->GetFeatureList()->IsEnabled(Feature::BackgroundThreadEnumeration)
-			? app->GetRuntime()->GetUiThreadExecutor()
-			: app->GetRuntime()->GetInlineExecutor()),
+		app->GetRuntime()->GetComStaExecutor(), app->GetRuntime()->GetUiThreadExecutor()),
 	m_progressCursor(LoadCursor(nullptr, IDC_APPSTARTING)),
 	m_commandTarget(browser->GetCommandTargetManager(), this),
 	m_fileActionHandler(fileActionHandler),
@@ -110,6 +105,9 @@ ShellBrowserImpl::ShellBrowserImpl(HWND owner, App *app, BrowserWindow *browser,
 	m_connections.push_back(m_app->GetNavigationEvents()->AddStartedObserver(
 		std::bind_front(&ShellBrowserImpl::OnNavigationStarted, this),
 		NavigationEventScope::ForShellBrowser(*this)));
+	m_connections.push_back(m_app->GetNavigationEvents()->AddItemsEnumeratedObserver(
+		std::bind_front(&ShellBrowserImpl::OnNavigationItemsEnumerated, this),
+		NavigationEventScope::ForShellBrowser(*this)));
 	m_connections.push_back(m_app->GetNavigationEvents()->AddWillCommitObserver(
 		std::bind_front(&ShellBrowserImpl::OnNavigationWillCommit, this),
 		NavigationEventScope::ForShellBrowser(*this), boost::signals2::at_front,
@@ -118,6 +116,9 @@ ShellBrowserImpl::ShellBrowserImpl(HWND owner, App *app, BrowserWindow *browser,
 		std::bind_front(&ShellBrowserImpl::OnNavigationComitted, this),
 		NavigationEventScope::ForShellBrowser(*this), boost::signals2::at_front,
 		SlotGroup::HighPriority));
+	m_connections.push_back(m_app->GetNavigationEvents()->AddFailedObserver(
+		std::bind_front(&ShellBrowserImpl::OnNavigationFailed, this),
+		NavigationEventScope::ForShellBrowser(*this)));
 
 	m_connections.push_back(m_app->GetClipboardWatcher()->updateSignal.AddObserver(
 		std::bind_front(&ShellBrowserImpl::OnClipboardUpdate, this)));

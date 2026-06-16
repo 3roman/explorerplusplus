@@ -59,6 +59,8 @@ public:
 
 private:
 	static concurrencpp::null_result StartInternal(WeakPtr<NavigationRequest> weakSelf);
+	static void DispatchItemBatch(WeakPtr<NavigationRequest> weakSelf,
+		std::shared_ptr<concurrencpp::executor> originalExecutor, std::vector<PidlChild> items);
 
 	void SetState(State state);
 

@@ -9,6 +9,7 @@
 #include "../Helper/SignalHelper.h"
 #include <boost/core/noncopyable.hpp>
 #include <boost/signals2.hpp>
+#include <vector>
 
 class ShellBrowser;
 
@@ -57,12 +58,21 @@ class NavigationEvents : private boost::noncopyable
 {
 public:
 	using NavigationSignal = boost::signals2::signal<void(const NavigationRequest *request)>;
+	using NavigationItemsSignal = boost::signals2::signal<void(const NavigationRequest *request,
+		const std::vector<PidlChild> &items)>;
 
 	using StoppedSignal = boost::signals2::signal<void(const ShellBrowser *shellBrowser)>;
 
 	// Triggered when a navigation is initiated.
 	boost::signals2::connection AddStartedObserver(const NavigationSignal::slot_type &observer,
 		const NavigationEventScope &scope,
+		boost::signals2::connect_position position = boost::signals2::at_back,
+		SlotGroup slotGroup = SlotGroup::Default);
+
+	// Triggered as directory items are enumerated. This allows views to show a directory
+	// progressively, rather than waiting for enumeration to fully complete.
+	boost::signals2::connection AddItemsEnumeratedObserver(
+		const NavigationItemsSignal::slot_type &observer, const NavigationEventScope &scope,
 		boost::signals2::connect_position position = boost::signals2::at_back,
 		SlotGroup slotGroup = SlotGroup::Default);
 
@@ -109,6 +119,7 @@ public:
 		SlotGroup slotGroup = SlotGroup::Default);
 
 	void NotifyStarted(const NavigationRequest *request);
+	void NotifyItemsEnumerated(const NavigationRequest *request, const std::vector<PidlChild> &items);
 	void NotifyWillCommit(const NavigationRequest *request);
 	void NotifyCommitted(const NavigationRequest *request);
 	void NotifyFailed(const NavigationRequest *request);
@@ -131,6 +142,21 @@ private:
 		};
 	}
 
+	static auto MakeFilteredObserver(const NavigationItemsSignal::slot_type &observer,
+		const NavigationEventScope &scope)
+	{
+		return [observer, scope](const NavigationRequest *request,
+				   const std::vector<PidlChild> &items)
+		{
+			if (!scope.DoesEventSourceMatch(*request->GetShellBrowser()))
+			{
+				return;
+			}
+
+			observer(request, items);
+		};
+	}
+
 	static auto MakeFilteredObserver(const StoppedSignal::slot_type &observer,
 		const NavigationEventScope &scope)
 	{
@@ -146,6 +172,7 @@ private:
 	}
 
 	NavigationSignal m_startedSignal;
+	NavigationItemsSignal m_itemsEnumeratedSignal;
 	NavigationSignal m_willCommitSignal;
 	NavigationSignal m_committedSignal;
 	NavigationSignal m_failedSignal;

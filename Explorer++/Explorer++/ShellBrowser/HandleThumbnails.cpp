@@ -33,6 +33,7 @@ void ShellBrowserImpl::RemoveThumbnailsView()
 {
 	m_thumbnailThreadPool.clear_queue();
 	m_thumbnailResults.clear();
+	m_pendingThumbnailTasks.clear();
 
 	InvalidateAllItemImages();
 
@@ -59,29 +60,27 @@ void ShellBrowserImpl::InvalidateAllItemImages()
 
 void ShellBrowserImpl::QueueThumbnailTask(int internalIndex)
 {
+	if (!m_pendingThumbnailTasks.insert(internalIndex).second)
+	{
+		return;
+	}
+
 	int thumbnailResultID = m_thumbnailResultIDCounter++;
 
 	BasicItemInfo_t basicItemInfo = getBasicItemInfo(internalIndex);
 
 	auto result = m_thumbnailThreadPool.push(
 		[listView = m_listView, thumbnailResultID, internalIndex, basicItemInfo,
-			thumbnailSize = m_thumbnailItemWidth](int id) -> std::optional<ThumbnailResult_t>
+			thumbnailSize = m_thumbnailItemWidth](int id) -> ThumbnailResult_t
 		{
 			UNREFERENCED_PARAMETER(id);
 
-			auto bitmap = GetThumbnail(basicItemInfo.pidlComplete.get(), thumbnailSize,
-				WTS_EXTRACT | WTS_SCALETOREQUESTEDSIZE);
-
-			if (!bitmap)
-			{
-				return std::nullopt;
-			}
-
-			PostMessage(listView, WM_APP_THUMBNAIL_RESULT_READY, thumbnailResultID, 0);
-
 			ThumbnailResult_t result;
 			result.itemInternalIndex = internalIndex;
-			result.bitmap = std::move(bitmap);
+			result.bitmap = GetThumbnail(basicItemInfo.pidlComplete.get(), thumbnailSize,
+				WTS_EXTRACT | WTS_SCALETOREQUESTEDSIZE);
+
+			PostMessage(listView, WM_APP_THUMBNAIL_RESULT_READY, thumbnailResultID, 0);
 
 			return result;
 		});
@@ -154,22 +153,24 @@ void ShellBrowserImpl::ProcessThumbnailResult(int thumbnailResultId)
 		return;
 	}
 
+	auto result = itr->second.get();
+	m_thumbnailResults.erase(itr);
+	m_pendingThumbnailTasks.erase(result.itemInternalIndex);
+
 	if (!IsThumbnailsViewMode(m_folderSettings.viewMode))
 	{
 		return;
 	}
 
-	auto result = itr->second.get();
-
-	if (!result)
+	if (!result.bitmap)
 	{
 		// Thumbnail lookup failed.
 		return;
 	}
 
-	int imageIndex = GetExtractedThumbnail(result->bitmap.get());
+	int imageIndex = GetExtractedThumbnail(result.bitmap.get());
 
-	auto index = LocateItemByInternalIndex(result->itemInternalIndex);
+	auto index = LocateItemByInternalIndex(result.itemInternalIndex);
 
 	if (!index)
 	{
@@ -258,9 +259,9 @@ void ShellBrowserImpl::DrawIconThumbnailInternal(HDC hdcBacking, int iInternalIn
 	const auto &itemInfo = m_itemInfoMap.at(iInternalIndex);
 	std::optional<int> fastIconIndex;
 
-	if (ShouldUseFastNetworkFileIcon(itemInfo))
+	if (ShouldUseFastNetworkItemIcon(itemInfo))
 	{
-		fastIconIndex = MaybeGetFastFileIconIndex(itemInfo);
+		fastIconIndex = MaybeGetFastNetworkIconIndex(itemInfo);
 	}
 
 	if (fastIconIndex)
