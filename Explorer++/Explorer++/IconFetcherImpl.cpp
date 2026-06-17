@@ -47,7 +47,6 @@ void IconFetcherImpl::QueueIconTask(std::wstring_view path, Callback callback)
 		[this, iconResultID, copiedPath = std::wstring(path)](int id) -> std::optional<IconResult>
 		{
 			UNREFERENCED_PARAMETER(id);
-			std::optional<IconResult> result;
 
 			// SHGetFileInfo will fail for non-filesystem paths that are passed in
 			// as strings. For example, attempting to retrieve the icon for the
@@ -59,19 +58,22 @@ void IconFetcherImpl::QueueIconTask(std::wstring_view path, Callback callback)
 			HRESULT hr =
 				SHParseDisplayName(copiedPath.c_str(), nullptr, wil::out_param(pidl), 0, nullptr);
 
-			if (SUCCEEDED(hr))
+			if (FAILED(hr))
 			{
-				auto iconInfo = FindIconAsync(pidl.get());
-
-				if (iconInfo)
-				{
-					IconResult iconResult;
-					iconResult.iconIndex = iconInfo->iconIndex;
-					iconResult.overlayIndex = iconInfo->overlayIndex;
-					iconResult.path = copiedPath;
-					result = std::move(iconResult);
-				}
+				return std::nullopt;
 			}
+
+			auto iconInfo = FindIconAsync(pidl.get());
+
+			if (!iconInfo)
+			{
+				return std::nullopt;
+			}
+
+			IconResult result;
+			result.iconIndex = iconInfo->iconIndex;
+			result.overlayIndex = iconInfo->overlayIndex;
+			result.path = copiedPath;
 
 			PostMessage(m_hwnd, WM_APP_ICON_RESULT_READY, iconResultID, 0);
 
@@ -95,7 +97,6 @@ void IconFetcherImpl::QueueIconTask(PCIDLIST_ABSOLUTE pidl, Callback callback)
 		[this, iconResultID, basicItemInfo](int id) -> std::optional<IconResult>
 		{
 			UNREFERENCED_PARAMETER(id);
-			std::optional<IconResult> result;
 
 			// It's important that pidl is updated. Otherwise, the icon that's retrieved may be the
 			// original icon.
@@ -115,21 +116,21 @@ void IconFetcherImpl::QueueIconTask(PCIDLIST_ABSOLUTE pidl, Callback callback)
 
 			auto iconInfo = FindIconAsync(finalPidl);
 
-			if (iconInfo)
+			if (!iconInfo)
 			{
-				IconResult iconResult;
-				iconResult.iconIndex = iconInfo->iconIndex;
-				iconResult.overlayIndex = iconInfo->overlayIndex;
+				return std::nullopt;
+			}
 
-				std::wstring filePath;
-				hr = GetDisplayName(finalPidl, SHGDN_FORPARSING, filePath);
+			IconResult result;
+			result.iconIndex = iconInfo->iconIndex;
+			result.overlayIndex = iconInfo->overlayIndex;
 
-				if (SUCCEEDED(hr))
-				{
-					iconResult.path = filePath;
-				}
+			std::wstring filePath;
+			hr = GetDisplayName(finalPidl, SHGDN_FORPARSING, filePath);
 
-				result = std::move(iconResult);
+			if (SUCCEEDED(hr))
+			{
+				result.path = filePath;
 			}
 
 			PostMessage(m_hwnd, WM_APP_ICON_RESULT_READY, iconResultID, 0);
@@ -171,9 +172,7 @@ void IconFetcherImpl::ProcessIconResult(int iconResultId)
 	}
 
 	auto &futureResult = itr->second;
-	auto callback = std::move(futureResult.callback);
 	auto result = futureResult.iconResult.get();
-	m_iconResults.erase(itr);
 
 	if (!result)
 	{
@@ -186,7 +185,7 @@ void IconFetcherImpl::ProcessIconResult(int iconResultId)
 		m_cachedIcons->AddOrUpdateIcon(result->path, result->iconIndex);
 	}
 
-	callback(result->iconIndex, result->overlayIndex);
+	futureResult.callback(result->iconIndex, result->overlayIndex);
 }
 
 void IconFetcherImpl::ClearQueue()

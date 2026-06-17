@@ -7,19 +7,13 @@
 #include "../Helper/ShellHelper.h"
 #include <wil/common.h>
 
-namespace
-{
-constexpr size_t ENUMERATION_BATCH_SIZE = 32;
-}
-
 ShellEnumeratorImpl::ShellEnumeratorImpl(HWND embedder) : m_embedder(embedder)
 {
 }
 
 HRESULT ShellEnumeratorImpl::EnumerateDirectory(PCIDLIST_ABSOLUTE pidlDirectory,
 	ShellItemFilter::ItemType itemType, ShellItemFilter::HiddenItemPolicy hiddenItemPolicy,
-	std::vector<PidlChild> &outputItems, std::stop_token stopToken,
-	ShellEnumeratorItemBatchCallback itemBatchCallback) const
+	std::vector<PidlChild> &outputItems, std::stop_token stopToken) const
 {
 	wil::com_ptr_nothrow<IShellFolder> shellFolder;
 	RETURN_IF_FAILED(SHBindToObject(nullptr, pidlDirectory, nullptr, IID_PPV_ARGS(&shellFolder)));
@@ -52,29 +46,11 @@ HRESULT ShellEnumeratorImpl::EnumerateDirectory(PCIDLIST_ABSOLUTE pidlDirectory,
 
 	ULONG numFetched = 1;
 	unique_pidl_child pidlItem;
-	std::vector<PidlChild> currentBatch;
 
 	while (!stopToken.stop_requested()
 		&& enumerator->Next(1, wil::out_param(pidlItem), &numFetched) == S_OK && (numFetched == 1))
 	{
-		PidlChild childPidl(pidlItem.get());
-		outputItems.push_back(childPidl);
-
-		if (itemBatchCallback)
-		{
-			currentBatch.push_back(std::move(childPidl));
-
-			if (currentBatch.size() >= ENUMERATION_BATCH_SIZE)
-			{
-				itemBatchCallback(std::move(currentBatch));
-				currentBatch.clear();
-			}
-		}
-	}
-
-	if (itemBatchCallback && !currentBatch.empty())
-	{
-		itemBatchCallback(std::move(currentBatch));
+		outputItems.emplace_back(pidlItem.get());
 	}
 
 	return S_OK;

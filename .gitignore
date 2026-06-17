@@ -54,6 +54,3 @@ obj/
 *.pfx
 *.snk
 *.zip
-
-# Local MSBuild overrides
-/Directory.Build.local.props

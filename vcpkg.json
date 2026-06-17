@@ -27,6 +27,7 @@
     "detours",
     "fmt",
     "glog",
+    "gtest",
     "lua",
     "nlohmann-json",
     "pegtl",

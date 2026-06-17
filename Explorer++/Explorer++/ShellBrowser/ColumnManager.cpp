@@ -19,13 +19,6 @@
 
 void ShellBrowserImpl::QueueColumnTask(int itemInternalIndex, ColumnType columnType)
 {
-	PendingColumnTask pendingTask{ itemInternalIndex, columnType };
-
-	if (!m_pendingColumnTasks.insert(pendingTask).second)
-	{
-		return;
-	}
-
 	int columnResultID = m_columnResultIDCounter++;
 
 	BasicItemInfo_t basicItemInfo = getBasicItemInfo(itemInternalIndex);
@@ -77,14 +70,12 @@ void ShellBrowserImpl::ProcessColumnResult(int columnResultId)
 		return;
 	}
 
-	auto result = itr->second.get();
-	m_columnResults.erase(itr);
-	m_pendingColumnTasks.erase(PendingColumnTask{ result.itemInternalIndex, result.columnType });
-
 	if (m_folderSettings.viewMode != +ViewMode::Details)
 	{
 		return;
 	}
+
+	auto result = itr->second.get();
 
 	auto index = LocateItemByInternalIndex(result.itemInternalIndex);
 
@@ -105,6 +96,8 @@ void ShellBrowserImpl::ProcessColumnResult(int columnResultId)
 	auto columnText = std::make_unique<TCHAR[]>(result.columnText.size() + 1);
 	StringCchCopy(columnText.get(), result.columnText.size() + 1, result.columnText.c_str());
 	ListView_SetItemText(m_listView, *index, *columnIndex, columnText.get());
+
+	m_columnResults.erase(itr);
 }
 
 std::optional<int> ShellBrowserImpl::GetColumnIndexByType(ColumnType columnType) const

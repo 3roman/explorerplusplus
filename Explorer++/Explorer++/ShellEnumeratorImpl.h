@@ -13,8 +13,7 @@ public:
 
 	HRESULT EnumerateDirectory(PCIDLIST_ABSOLUTE pidlDirectory, ShellItemFilter::ItemType itemType,
 		ShellItemFilter::HiddenItemPolicy hiddenItemPolicy, std::vector<PidlChild> &outputItems,
-		std::stop_token stopToken,
-		ShellEnumeratorItemBatchCallback itemBatchCallback = nullptr) const override;
+		std::stop_token stopToken) const override;
 
 private:
 	const HWND m_embedder;

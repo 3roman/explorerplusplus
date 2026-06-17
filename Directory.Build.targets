@@ -1,14 +1,3 @@
 <Project>
  <Import Project="$(MSBuildThisFileDirectory)Explorer++\ThirdParty\vcpkg\scripts\buildsystems\msbuild\vcpkg.targets" />
- <PropertyGroup Condition="'$(FastLocalBuild)' == 'true'">
-  <WholeProgramOptimization>false</WholeProgramOptimization>
- </PropertyGroup>
- <ItemDefinitionGroup Condition="'$(FastLocalBuild)' == 'true'">
-  <ClCompile>
-   <WholeProgramOptimization>false</WholeProgramOptimization>
-  </ClCompile>
-  <Link>
-   <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
-  </Link>
- </ItemDefinitionGroup>
 </Project>

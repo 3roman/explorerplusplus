@@ -6,11 +6,8 @@
 
 #include "ShellItemFilter.h"
 #include "../Helper/Pidl.h"
-#include <functional>
 #include <stop_token>
 #include <vector>
-
-using ShellEnumeratorItemBatchCallback = std::function<void(std::vector<PidlChild> items)>;
 
 class ShellEnumerator
 {
@@ -19,6 +16,5 @@ public:
 
 	virtual HRESULT EnumerateDirectory(PCIDLIST_ABSOLUTE pidlDirectory,
 		ShellItemFilter::ItemType itemType, ShellItemFilter::HiddenItemPolicy hiddenItemPolicy,
-		std::vector<PidlChild> &outputItems, std::stop_token stopToken,
-		ShellEnumeratorItemBatchCallback itemBatchCallback = nullptr) const = 0;
+		std::vector<PidlChild> &outputItems, std::stop_token stopToken) const = 0;
 };
